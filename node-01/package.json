@@ -14,6 +14,7 @@
     "mongodb": "^3.0.2"
   },
   "devDependencies": {
+    "gulp-nunjucks-render": "^2.2.2",
     "nodemon": "^1.15.1"
   }
 }
