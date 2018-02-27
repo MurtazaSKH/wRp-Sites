@@ -55,50 +55,64 @@ if($func=="updatePluginModal")
 
        while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
        {
+         $pid=$row['plugin_id'];
+         $query2=("SELECT * FROM plugin_thumbs WHERE plugin_id='$pid'");
+         $result2 = mysqli_query($db,$query2);
+         $result3 = mysqli_query($db,$query2);
          echo '<div class="uk-modal-dialog uk-modal-body">
            <button class="uk-modal-close-default" type="button" uk-close></button>
            <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
-             <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
-             <div class="" name="col1" style="">
-               <div class="uk-padding-small" uk-slideshow uk-grid>
-                 <div class="uk-width-auto@m">
-                   <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
-                     <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
-                     <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
-                     <li uk-slideshow-item="2"><a href="#"><img src="./images/plu3.jpg" width="60" alt=""></a></li>
-                     <li uk-slideshow-item="3"><a href="#"><img src="./images/youtube.jpg" width="60" alt=""></a></li>
-                   </ul>
-                 </div>
-                 <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
-                   <ul class="uk-slideshow-items">
-                     <li>
-                       <img src="./images/plu1.jpg" alt="" uk-cover>
-                     </li>
-                     <li>
-                       <img src="./images/plu2.jpg" alt="" uk-cover>
-                     </li>
-                     <li>
-                       <img src="./images/plu3.jpg" alt="" uk-cover>
-                     </li>
-                     <li>
-                       <iframe width="440" height="315" src="https://www.youtube.com/embed/TUUUh-51t1k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                     </li>
-                   </ul>
-                   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                   <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-                 </div>
+             <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
+             <div class="" name="col1" style="">';
 
-               </div>
 
-               <!-- <div class="uk-padding-small"> -->
+             if(mysqli_num_rows($result2) > 0)
+                {
+                  $count=0;
+                  echo '<div class="uk-padding-large uk-padding-remove-bottom" uk-slideshow uk-grid>
+                    <div class="uk-width-auto@m">
+                      <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>';
+                      while($row2 = mysqli_fetch_array($result2,MYSQLI_BOTH))
+                      {
+                        echo '<li uk-slideshow-item="'.$count.'"><a href="#"><img src="'.$row2['link'].'" width="60" alt=""></a></li>';
+                        $count++;
+                      }
+
+
+                        echo '
+                      </ul>
+                    </div>
+                    <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
+                      <ul class="uk-slideshow-items">';
+                      $count=0;
+                      while($row3 = mysqli_fetch_array($result3,MYSQLI_BOTH))
+                      {
+                        echo '<li>
+                          <img src="'.$row3['link'].'" alt="" uk-cover>
+                        </li>';
+                        $count++;
+                      }
+
+
+                    echo '  </ul>
+                      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                    </div>
+
+                  </div>';
+
+
+             }
+
+              echo '<!-- <div class="uk-padding-small"> -->
                <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom">
                  <tbody>
                    <tr>
-                     <td style="color:#333333">Price: $</td>
-                     <td style="color:#333333">Supported Versions: </td>
+                     <td style="color:#333333">Price: $'.$row['Price'].'</td>
+                     <td style="color:#333333">Supported Versions: '.$row['supported_versions'].'</td>
                    </tr>
                    <tr>
-                     <td><a href="">Download</a></td>
+                     <td><a href="'.$row['Direct_link'].'">Download</a></td>
                      <td></td>
                    </tr>
                  </tbody>
