@@ -20,10 +20,7 @@
   <script src="js/uikit-icons.min.js" defer></script>
   <script src="js/isotope.pkgd.min.js" defer></script>
   <script src="js/flickity.pkgd.min.js" defer></script>
-  <script src="./fetchdata/fetch.js"></script>
-  <script>
-    getList();
-  </script>
+
 </head>
 
 <body class="uk-background-primary uk-dark">
@@ -94,19 +91,26 @@
       <hr class="uk-margin-remove uk-padding-small">
       <!-- isotope integration with bootstrap layout  -->
       <div class="container">
-        <div class="row justify-content-md-left" id="plugins_list">
+        <div class="row justify-content-md-left">
 
           <div class="col col-lg-3 assets">
             <div class="uk-inline uk-slider-items uk-transition-toggle ">
               <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade" >
-                <a href="#plugin" uk-toggle>
+
+              <!-- <a href="#plugin1" uk-toggle>
+                <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-bottom uk-text-center  ">
+                  Quick View
+                </div>
+              </a> -->
+              <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+                <a href="#plugin1" uk-toggle>
                   <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
                     Quick View
                   </div>
                 </a>
                 <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
               </div>
+
             </div>
           </div>
 
@@ -317,7 +321,7 @@
 
 <!-- temporary modal data for plugins -->
 <!-- This is the modal with the default close button -->
-<div id="plugin" class="uk-modal-container" uk-modal>
+<div id="plugin1" class="uk-modal-container" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
     <button class="uk-modal-close-default" type="button" uk-close></button>
     <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
@@ -354,18 +358,18 @@
         </div>
 
         <!-- <div class="uk-padding-small"> -->
-        <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom">
-          <tbody>
-            <tr>
-              <td style="color:#333333">Price: $</td>
-              <td style="color:#333333">Supported Versions: </td>
-            </tr>
-            <tr>
-              <td><a href="">Download</a></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+          <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom">
+            <tbody >
+              <tr >
+                <td style="color:#333333">Price: $</td>
+                <td style="color:#333333">Supported Versions: </td>
+              </tr>
+              <tr>
+                <td><a href="">Download</a></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         <!-- </div> -->
       </div>
       <div class="uk-padding-small">
