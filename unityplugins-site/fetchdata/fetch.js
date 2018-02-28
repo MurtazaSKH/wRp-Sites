@@ -28,28 +28,25 @@ function getList() {
   xmlhttp.onreadystatechange = getList_callback;
   xmlhttp.open("GET", url, true);
   xmlhttp.send(null);
-  alert(url);
 }
 
 function getList_callback() {
   if (xmlhttp.readyState == 4) {
-    alert ('get list response' + response)
     var response = xmlhttp.responseText;
-    if(response!="undefined")
-    {
-        document.getElementById("plugins_list").innerHTML = response
-    }
-    else {
+    if (response != "undefined") {
+      document.getElementById("plugins_list").innerHTML = response
+    } else {
       // make a sample div for could not load error etc.
-      document.getElementById("plugins_list").innerHTML = '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
     }
   }
 }
 
 ///////////////////////////////////////////////////// Update modal info and load
 function updateModal(pluginId) {
+
+  document.getElementById("plugin").innerHTML = '<div class="uk-modal-dialog uk-modal-body"><div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div></div>';
+
   xmlhttp = GetXmlHttpObject();
-  // document.getElementById("plugin").innerHTML = '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
   if (xmlhttp == null) {
     alert("Browser does not support HTTP Request");
     return;
@@ -57,16 +54,44 @@ function updateModal(pluginId) {
 
   // attempt to check for user/pass in database
   var url = "./fetchdata/fetch.php";
-  url = url + "?func=updatePluginModal&pluginId="+pluginId;
+  url = url + "?func=updatePluginModal&pluginId=" + pluginId;
   url = url + "&sid=" + Math.random();
   xmlhttp.onreadystatechange = updateModal_callback;
+
   xmlhttp.open("GET", url, true);
-  xmlhttp.send(null);
+
+  setTimeout(function() {
+    xmlhttp.send(null);
+  }, 600);
 }
 
 function updateModal_callback() {
   if (xmlhttp.readyState == 4) {
     var response = xmlhttp.responseText;
     document.getElementById("plugin").innerHTML = response;
+  }
+}
+
+///////////////////////////////////////////////////// Function to test localhost connection
+function testDBConnect() {
+  xmlhttp = GetXmlHttpObject();
+  if (xmlhttp == null) {
+    alert("Browser does not support HTTP Request");
+    return;
+  }
+
+  // attempt to check for user/pass in database
+  var url = "./fetchdata/connect.php";
+  url = url + "?func=checkConnection";
+  url = url + "&sid=" + Math.random();
+  xmlhttp.onreadystatechange = testDBConnect_callback;
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send(null);
+}
+
+function testDBConnect_callback() {
+  if (xmlhttp.readyState == 4) {
+    var response = xmlhttp.responseText;
+    alert(response);
   }
 }

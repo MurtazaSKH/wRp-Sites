@@ -55,10 +55,17 @@ if($func=="updatePluginModal")
 
        while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
        {
-         $pid=$row['plugin_id'];
-         $query2=("SELECT * FROM plugin_thumbs WHERE plugin_id='$pid'");
-         $result2 = mysqli_query($db,$query2);
-         $result3 = mysqli_query($db,$query2);
+         $picdir=$row['pics_folder'];
+				 // echo "folder name is $picdir";
+				 $pics=scandir($picdir,1);
+				 $picdir = substr($picdir, 1);
+				 // foreach($scan as $file)
+					// {
+					//     if (!is_dir("myFolder/$file"))
+					//     {
+					//         echo $file.'\n';
+					//     }
+					// }
          echo '<div class="uk-modal-dialog uk-modal-body">
            <button class="uk-modal-close-default" type="button" uk-close></button>
            <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
@@ -66,17 +73,27 @@ if($func=="updatePluginModal")
              <div class="" name="col1" style="">';
 
 
-             if(mysqli_num_rows($result2) > 0)
+             if(1)
                 {
                   $count=0;
                   echo '<div class="uk-padding-large uk-padding-remove-bottom" uk-slideshow uk-grid>
                     <div class="uk-width-auto@m">
                       <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>';
-                      while($row2 = mysqli_fetch_array($result2,MYSQLI_BOTH))
-                      {
-                        echo '<li uk-slideshow-item="'.$count.'"><a href="#"><img src="'.$row2['link'].'" width="60" alt=""></a></li>';
-                        $count++;
-                      }
+											foreach($pics as $file)
+						 					{
+
+						 					    if (!is_dir("myFolder/$file"))
+						 					    {
+															if($file!="." and $file!="..")
+															{
+																echo '<li uk-slideshow-item="'.$count.'"><a href="#"><img src="'.$picdir.'\\';
+																echo $file;
+																echo '" width="60" alt=""></a></li>';
+																$count++;
+															}
+						 					    }
+						 					}
+
 
 
                         echo '
@@ -85,21 +102,23 @@ if($func=="updatePluginModal")
                     <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
                       <ul class="uk-slideshow-items">';
                       $count=0;
-                      while($row3 = mysqli_fetch_array($result3,MYSQLI_BOTH))
-                      {
-                        echo '<li>
-                          <img src="'.$row3['link'].'" alt="" uk-cover>
-                        </li>';
-                        $count++;
-                      }
+											foreach($pics as $file)
+						 					{
 
-
-                    echo '  </ul>
-                      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-                    </div>
-
-                  </div>';
+						 					    if (!is_dir("myFolder/$file"))
+						 					    {
+														if($file!="." and $file!="..")
+														{
+															// echo '<li><img src=".\images\plu1\\';
+															echo '<li><img src="'.$picdir.'\\';
+															echo $file;
+															echo '" alt="" uk-cover>
+															</li>';
+															$count++;
+														}
+						 					    }
+						 					}
+											echo '  </ul></div></div>';
 
 
              }
