@@ -28,18 +28,28 @@ function getList() {
   xmlhttp.onreadystatechange = getList_callback;
   xmlhttp.open("GET", url, true);
   xmlhttp.send(null);
+  alert(url);
 }
 
 function getList_callback() {
   if (xmlhttp.readyState == 4) {
+    alert ('get list response' + response)
     var response = xmlhttp.responseText;
-    document.getElementById("plugins_list").innerHTML = response
+    if(response!="undefined")
+    {
+        document.getElementById("plugins_list").innerHTML = response
+    }
+    else {
+      // make a sample div for could not load error etc.
+      document.getElementById("plugins_list").innerHTML = '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
+    }
   }
 }
 
 ///////////////////////////////////////////////////// Update modal info and load
 function updateModal(pluginId) {
   xmlhttp = GetXmlHttpObject();
+  // document.getElementById("plugin").innerHTML = '<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
   if (xmlhttp == null) {
     alert("Browser does not support HTTP Request");
     return;
