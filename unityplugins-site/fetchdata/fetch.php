@@ -2,7 +2,7 @@
 $func= $_GET['func']?$_GET['func']:$_POST['func'];
 
 include("connect.php");
-echo "connect fine";
+
 ////////////////////////////////////////// get all plugins for list//////////////////////////////////
 
 if($func=="displayAllPlugins")
@@ -12,6 +12,7 @@ if($func=="displayAllPlugins")
    	$result = mysqli_query($db,$query);
 	if(mysqli_num_rows($result) > 0)
      {
+
 
 
 
@@ -93,7 +94,12 @@ if($func=="updatePluginModal")
                       }
 
 
-                    echo '</ul></div></div>';
+                    echo '  </ul>
+                      <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                    </div>
+
+                  </div>';
 
 
              }
