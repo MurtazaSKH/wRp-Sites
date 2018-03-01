@@ -58,20 +58,41 @@
     asd-tempa asd as d
 </nav> -->
 
+    <div class="uk-container-expand">
+      <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 7:3; animation: push">
+
+        <ul class="uk-slideshow-items">
+          <li>
+            <img src="./images/slide1.jpg" alt="" uk-cover>
+          </li>
+          <li>
+            <img src="./images/slide2.png" alt="" uk-cover>
+          </li>
+        </ul>
+        <div class="uk-position-center">
+                <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
+            </div>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+      </div>
+    </div>
 
   <section class="uk-margin-large-top">
-    <div class="uk-container">
+    <div class="uk-container" style="display:none;">
 
       <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
 
 
       <article class="uk-article uk-margin-xlarge-top">
-        <!-- <h2 id="article-1" class="uk-article-title uk-margin-medium-bottom">Lorem Ipsum H2<a href="#" data-uk-totop data-uk-scroll="duration: 400" class="tm-totop uk-float-right uk-margin-small-top"></a></h2> -->
         <p>Play and let play! We are developing casual, fun and artsy games for facebook, iPhone and android! .
         </p>
         <p>Mission <br> -To make awesome fun games.<br> -To be honest in everything that we do.<br> -To have FUN while creating (awesome) FUN (games) and working HARD.<br> -To make lots of money, use it to help some people (kids mostly) and also do something
           for our wonderful little blue planet, then retire early and travel the world...eat italian pizzas, french baguettes, belgian chocolates, turkish delights,... and CHEESEBOARD!</p>
       </article>
+
+
 
     </div>
   </section>
@@ -86,7 +107,7 @@
           <li data-filter="*"><a href="">All</a></li>
           <li data-filter=".assets"><a href="">Assets</a></li>
           <li data-filter=".social"><a href="">Social</a></li>
-          <li class=""><a href="">iOS/Android</a></li>
+          <li data-filter=".iosand" class=""><a href="">iOS/Android</a></li>
         </ul>
       </nav>
     </div>
@@ -310,9 +331,6 @@
           clickable: true,
         },
       });
-
-      // temporary load modal data into html
-      $("#temp-modal").load("pluginsdata.html");
     });
   </script>
 
