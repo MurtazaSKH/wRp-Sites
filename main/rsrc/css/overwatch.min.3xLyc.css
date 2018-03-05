@@ -1,0 +1,157 @@
+
+/*dont delete*/
+.game .body {
+    background-color: #102e56;
+    color: #fff
+}
+.game .body .section .section-header {
+    line-height: normal;
+    text-align: center;
+    position: relative
+}
+.game .body .section .subheader {
+    font: 400 1.35em Futura, "century gothic", arial, sans-serif;
+    text-transform: uppercase
+}
+.game .body .section .text {
+    color: rgba(255, 255, 255, .9);
+    display: block;
+    font: 400 1.35em/1.7em Arial, sans-serif;
+    max-width: 35rem;
+    margin: 0 auto;
+    text-align: center
+}
+.game .body .section.game {
+    background-image: url("../../images/pages/game/backgrounds/game_overview_bg.4ILfP.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+    padding-top: 10em;
+    position: relative
+}
+@media only screen and (max-width: 75em) {
+    .game .body .section.game {
+        padding-top: 7em;
+        padding-bottom: 5.5em;
+        background-position: 27% top
+    }
+}
+@media only screen and (max-width: 47.5em) {
+    .game .body .section.game {
+        background-image: url("../../images/pages/game/backgrounds/game_overview-long_bg.35GBW.jpg");
+        background-size: 130% auto;
+        background-position: center top;
+        background-color: #241313;
+        padding-bottom: 3em
+    }
+}
+@media only screen and (max-width: 30em) {
+    .game .body .section.game {
+        background-size: 170% auto
+    }
+}
+.game .body .section.game .content {
+    float: right;
+    width: 45%;
+    padding-top: 1em
+}
+@media only screen and (max-width: 75em) {
+    .game .body .section.game .content {
+        clear: both;
+        width: 100%;
+        float: none;
+        padding: 0;
+        margin: 1em auto
+    }
+}
+@media only screen and (max-width: 47.5em) {
+    .game .body .section.game .content {
+        margin-top: 20em
+    }
+}
+@media only screen and (max-width: 20em) {
+    .game .body .section.game .content {
+        margin-top: 15em
+    }
+}
+.game .body .section.game .section-header {
+    text-align: left
+}
+@media only screen and (max-width: 75em) {
+    .game .body .section.game .section-header {
+        clear: both;
+        width: 100%;
+        margin: .2em auto;
+        text-align: center
+    }
+}
+.game .body .section.game .text {
+    margin: 1em 0;
+    font: 400 2em Futura, "century gothic", arial, sans-serif;
+    text-shadow: 0 0 10px rgba(255, 255, 255, .3);
+    text-align: left
+}
+@media only screen and (max-width: 75em) {
+    .game .body .section.game .text {
+        margin: 0 auto 1em;
+        text-align: center
+    }
+}
+@media only screen and (max-width: 47.5em) {
+    .game .body .section.game .text {
+        font: 400 1.35em Futura, "century gothic", arial, sans-serif
+    }
+}
+@media only screen and (max-width: 30em) {
+    .game .body .section.game .text {
+        font: 400 1.2em Futura, "century gothic", arial, sans-serif
+    }
+}
+
+
+.game .body .section.game .gameplay-video-wrapper {
+    float: right;
+    width: 45%;
+    max-width: 600px;
+    margin-right: 5em;
+    padding: 20px 30px;
+    border-right: 8px solid rgba(255, 255, 255, .7);
+    border-left: 8px solid rgba(255, 255, 255, .7);
+    border-radius: 20px
+}
+.game .body .section.game .gameplay-video-wrapper video {
+    left: 0;
+    width: 100%;
+    border-radius: 10px
+}
+.game .body .section.game .gameplay-video-wrapper:hover {
+    border-color: #fff
+}
+@media only screen and (max-width: 75em) {
+    .game .body .section.game .gameplay-video-wrapper {
+        width: 600px;
+        margin: 0 auto;
+        float: none
+    }
+}
+@media only screen and (max-width: 61.25em) {
+    .game .body .section.game .gameplay-video-wrapper {
+        width: 95%
+    }
+}
+@media only screen and (max-width: 47.5em) {
+    .game .body .section.game .gameplay-video-wrapper {
+        max-height: 280px
+    }
+}
+@media only screen and (max-width: 30em) {
+    .game .body .section.game .gameplay-video-wrapper {
+        max-height: 230px;
+        height: auto
+    }
+}
+@media only screen and (max-width: 20em) {
+    .game .body .section.game .gameplay-video-wrapper {
+        max-height: 180px
+    }
+}

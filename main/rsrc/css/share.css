@@ -1,0 +1,70 @@
+.share {
+  max-width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  /*-webkit-filter: url("#goo");
+  filter: url("../share.html#goo");*/
+  position: relative;
+  -webkit-transform: scale(0.6, 0.6);
+  transform: scale(0.6, 0.6);
+}
+
+.share-button,
+.share-toggle-button {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  border-radius: 9%;
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: #ccc;
+  text-align: center;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 22px !important;
+  -webkit-transform: scale(0.6, 0.6);
+  transform: scale(0.6, 0.6);
+}
+
+.share-button:hover,
+.share-toggle-button:hover {
+  color: #fff;
+}
+
+.share-button {
+  font-size: 30px;
+  background: #737070;
+  -webkit-transform: scale(0.6, 0.6);
+  transform: scale(0.6, 0.6);
+  color: #222;
+}
+
+a.share-button {
+  color: white;
+}
+
+a.share-button:hover, 
+a.share-button:focus {
+  color: #dfd7d7;
+}
+
+.share-toggle-button {
+  z-index: 9;
+  background: #DF0F0F;
+  font-size: 20px;
+}
+
+.share-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.share-item {
+  display: inline-block;
+}
