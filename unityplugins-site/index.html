@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/flickity.css" />
   <link rel="stylesheet" href="css/swiper.min.css" />
   <link rel="stylesheet" href="css/loading_animation.css" />
-
   <style>
     [class*="col-"] {
       margin-bottom: 15px;
@@ -58,156 +57,77 @@
     asd-tempa asd as d
 </nav> -->
 
-    <div class="uk-container-expand">
-      <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 7:3; animation: push">
-
-        <ul class="uk-slideshow-items">
-          <li>
-            <img src="./images/slide1.jpg" alt="" uk-cover>
-          </li>
-          <li>
-            <img src="./images/slide2.png" alt="" uk-cover>
-          </li>
-        </ul>
-        <div class="uk-position-center">
-                <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
-            </div>
-
-        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
-      </div>
-    </div>
 
   <section class="uk-margin-large-top">
-    <div class="uk-container" style="display:none;">
+    <div class="uk-container">
 
       <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
 
 
       <article class="uk-article uk-margin-xlarge-top">
-        <p>Play and let play! We are developing casual, fun and artsy games for facebook, iPhone and android! .
-        </p>
-        <p>Mission <br> -To make awesome fun games.<br> -To be honest in everything that we do.<br> -To have FUN while creating (awesome) FUN (games) and working HARD.<br> -To make lots of money, use it to help some people (kids mostly) and also do something
-          for our wonderful little blue planet, then retire early and travel the world...eat italian pizzas, french baguettes, belgian chocolates, turkish delights,... and CHEESEBOARD!</p>
+        <!-- <h2 id="article-1" class="uk-article-title uk-margin-medium-bottom">Lorem Ipsum H2<a href="#" data-uk-totop data-uk-scroll="duration: 400" class="tm-totop uk-float-right uk-margin-small-top"></a></h2> -->
+        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
+          alias consequatur aut perferendis doloribus asperiores repellat.</p>
+        <p>At vero eos et accusamus et iusto erunt impedit quo minus facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibue. Itaque earum rerendis doloribus asperiores repellat.</p>
       </article>
-
-
 
     </div>
   </section>
 
   <!-- Container for viewing plugins in grid/slider -->
-  <div class="uk-margin-large-top uk-section-primary" style="min-height:550px;" id="plugins">
+  <div class="uk-margin-large-top uk-section-primary" style="min-height:250px;" id="plugins">
 
     <!-- Nav bar displayed full width and sticky on scroll -->
     <div class="uk-container-expand " style="background-color:#1c2024; box-shadow: 3px 11px 13px 0px #151313; " data-uk-sticky="sel-target: .uk-navbar; cls-active: uk-navbar-sticky; offset:77">
       <nav class="uk-navbar uk-text-center uk-container" style="z-index: 980;">
         <ul class="uk-navbar-nav uk-tab-top" style="margin: auto;" uk-tab>
-          <li data-filter="*"><a href="">All</a></li>
-          <li data-filter=".assets"><a href="">Assets</a></li>
-          <li data-filter=".social"><a href="">Social</a></li>
-          <li data-filter=".iosand" class=""><a href="">iOS/Android</a></li>
+          <li id="all"><a href="">All</a></li>
+          <li id="assets"><a href="">Assets</a></li>
+          <li id="social"><a href="">Social</a></li>
+          <li class=""><a href="">iOS/Android</a></li>
         </ul>
       </nav>
     </div>
 
     <!-- Plugin items in this container -->
-    <div class="uk-container">
+    <div class="uk-container uk-child-width-1-1@m">
 
       <hr class="uk-margin-remove uk-padding-small">
       <!-- isotope integration with bootstrap layout  -->
-      <div class="container">
-        <div class="row justify-content-md-left" id="plugins_list">
-
-          <div class="col col-lg-3 assets">
-            <div class="uk-inline uk-slider-items uk-transition-toggle ">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
-                <a href="#plugin" uk-toggle>
-                  <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-                    Quick View
-                  </div>
-                </a>
-                <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
+      <div class="swiper-container">
+        <div class="swiper-wrapper " id="plugins_list">
+          <div class="swiper-slide assets uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+                  <a href="#plugin1" uk-toggle>
+                    <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
+                      Quick View
+                    </div>
+                  </a>
+                  <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col col-lg-3 assets">
-            <div class="uk-inline uk-slider-items uk-transition-toggle">
-              <img src="./images/plu2.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
+          <div class="swiper-slide social uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col col-lg-3 social">
-            <div class="uk-inline uk-slider-items uk-transition-toggle">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 social">
-            <div class="uk-inline uk-slider-items uk-transition-toggle ">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3">
-            <div class="uk-inline uk-slider-items uk-transition-toggle assets">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 assets">
-            <div class="uk-inline uk-slider-items uk-transition-toggle ">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 assets">
-            <div class="uk-inline uk-slider-items uk-transition-toggle">
-              <img src="./images/plu2.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 social">
-            <div class="uk-inline uk-slider-items uk-transition-toggle">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 social">
-            <div class="uk-inline uk-slider-items uk-transition-toggle ">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col col-lg-3 assets">
-            <div class="uk-inline uk-slider-items uk-transition-toggle ">
-              <img src="./images/plu1.jpg" alt="">
-              <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
-                <p>Default Lorem ipsum dolor sit amet.</p>
-              </div>
-            </div>
-          </div>
+
+
         </div>
-
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
 
     </div>
@@ -326,17 +246,53 @@
         slidesPerView: 3,
         slidesPerColumn: 2,
         spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
       });
+
+      // Sorting the slides based on category
+
+      $('#all').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').show();
+        swiper.update();
+      });
+      $('#assets').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.assets').show();
+        swiper.update();
+      });
+      $('#social').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.social').show();
+        swiper.update();
+      });
+
+      // temporary load modal data into html
+      $("#temp-modal").load("pluginsdata.html");
     });
+
+    function hA() {
+      // UIkit.toggle('.assets').toggle();
+      // $('.swiper-slide').hide();
+    }
+
+    function sA() {
+      // $('.assets').show();
+      // $swiper.update();
+    }
   </script>
 
 </body>
 
-<!-- temporary modal data for plugins -->
 <!-- This is the modal with the default close button -->
 <div id="plugin" class="uk-modal-container" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
@@ -404,7 +360,6 @@
     </div>
   </div>
 </div>
-
 
 
 </html>
