@@ -76,23 +76,28 @@
 
     <!-- Nav bar displayed full width and sticky on scroll -->
     <div class="uk-container-expand " style="background-color:#1c2024; box-shadow: 3px 11px 13px 0px #151313; " data-uk-sticky="sel-target: .uk-navbar; cls-active: uk-navbar-sticky; offset:77">
-      <nav class="uk-navbar uk-text-center uk-container" style="z-index: 980;">
+      <!-- <nav class="uk-navbar uk-text-center uk-container" style="z-index: 980;">
         <ul class="uk-navbar-nav uk-tab-top" style="margin: auto;" uk-tab>
           <li data-filter="*"><a href="">All</a></li>
           <li data-filter=".assets" uk-toggle="target: .assets; animation: uk-animation-fade; queued: true; duration: 300"><a href="">Assets</a></li>
           <li data-filter=".social"><a href="">Social</a></li>
           <li class=""><a href="">iOS/Android</a></li>
         </ul>
-      </nav>
+      </nav> -->
+
     </div>
 
     <!-- Plugin items in this container -->
     <div class="uk-container uk-child-width-1-1@m">
 
-      <hr class="uk-margin-remove uk-padding-small">
-      <!-- isotope integration with bootstrap layout  -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
+      <!-- <hr class="uk-margin-remove uk-padding-small"> -->
+      <ul class="uk-navbar-nav uk-tab-top uk-text-center uk-container" style="margin: auto;" uk-tab="animation: uk-animation-slide-top-small">
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+      </ul>
+      <ul class="uk-switcher uk-margin uk-child-width-1-1@m swiper-container">
+        <li class="swiper-wrapper">
           <div class="swiper-slide assets">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
@@ -108,12 +113,42 @@
               </div>
             </div>
           </div>
-
-        </div>
-        <!-- Add Arrows -->
+          <div class="swiper-slide assets">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+                  <a href="#plugin1" uk-toggle>
+                    <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
+                      Quick View
+                    </div>
+                  </a>
+                  <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide assets">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+                  <a href="#plugin1" uk-toggle>
+                    <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
+                      Quick View
+                    </div>
+                  </a>
+                  <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>Hello again!</li>
+        <li>Bazinga!</li>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-      </div>
+      </ul>
 
     </div>
   </div>
@@ -254,12 +289,10 @@
       $("#temp-modal").load("pluginsdata.html");
     });
 
-    function HideAll()
-    {
+    function HideAll() {
       // UIkit.toggle(".assets").toggle();
       // document.getElementsByClassName('.assets').className="uk-card-hidden";
     }
-
   </script>
 
 </body>
