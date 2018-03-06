@@ -3190,6 +3190,10 @@ select.uk-form-width-xsmall {
   transition: box-shadow 0.1s ease-in-out;
 }
 
+.uk-card-hidden {
+  display:none;
+}
+
 /* Sections
  ========================================================================== */
 .uk-card-body {
