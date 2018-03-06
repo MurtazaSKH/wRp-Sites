@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/flickity.css" />
   <link rel="stylesheet" href="css/swiper.min.css" />
-
+  <link rel="stylesheet" href="css/loading_animation.css" />
   <style>
     [class*="col-"] {
       margin-bottom: 15px;
@@ -20,7 +20,11 @@
   <script src="js/uikit-icons.min.js" defer></script>
   <script src="js/isotope.pkgd.min.js" defer></script>
   <script src="js/flickity.pkgd.min.js" defer></script>
-
+  <script src="./fetchdata/fetch.js"></script>
+  <script>
+    getList();
+    // testDBConnect();
+  </script>
 </head>
 
 <body class="uk-background-primary uk-dark">
@@ -76,10 +80,10 @@
     <!-- Nav bar displayed full width and sticky on scroll -->
     <div class="uk-container-expand " style="background-color:#1c2024; box-shadow: 3px 11px 13px 0px #151313; " data-uk-sticky="sel-target: .uk-navbar; cls-active: uk-navbar-sticky; offset:77">
       <nav class="uk-navbar uk-text-center uk-container" style="z-index: 980;">
-        <ul class="uk-navbar-nav uk-tab-top" style="margin: auto;" uk-tab uk-switcher="connect: #component-nav; animation: uk-animation-fade; toggle: > :not(.uk-nav-header)">
-          <li ><a href="">All</a></li>
-          <li ><a href="">Assets</a></li>
-          <li ><a href="">Social</a></li>
+        <ul class="uk-navbar-nav uk-tab-top" style="margin: auto;" uk-tab>
+          <li id="all"><a href="">All</a></li>
+          <li id="assets"><a href="">Assets</a></li>
+          <li id="social"><a href="">Social</a></li>
           <li class=""><a href="">iOS/Android</a></li>
         </ul>
       </nav>
@@ -91,8 +95,8 @@
       <hr class="uk-margin-remove uk-padding-small">
       <!-- isotope integration with bootstrap layout  -->
       <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide assets">
+        <div class="swiper-wrapper " id="plugins_list">
+          <div class="swiper-slide assets uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
@@ -107,7 +111,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide social">
+
+          <div class="swiper-slide social uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
@@ -117,6 +122,8 @@
               </div>
             </div>
           </div>
+
+
         </div>
         <!-- Add Arrows -->
         <div class="swiper-button-next"></div>
@@ -249,74 +256,109 @@
         },
       });
 
+      // Sorting the slides based on category
+
+      $('#all').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').show();
+        swiper.update();
+      });
+      $('#assets').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.assets').show();
+        swiper.update();
+      });
+      $('#social').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.social').show();
+        swiper.update();
+      });
+
       // temporary load modal data into html
       $("#temp-modal").load("pluginsdata.html");
     });
+
+    function hA() {
+      // UIkit.toggle('.assets').toggle();
+      // $('.swiper-slide').hide();
+    }
+
+    function sA() {
+      // $('.assets').show();
+      // $swiper.update();
+    }
   </script>
 
 </body>
 
-<!-- temporary modal data for plugins -->
-<div>
-  <!-- This is the modal with the default close button -->
-  <div id="plugin1" class="uk-modal-container" uk-modal>
-    <div class="uk-modal-dialog uk-modal-body">
-      <button class="uk-modal-close-default" type="button" uk-close></button>
-      <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
-        <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
-        <div class="" name="col1" style="">
-          <div class="uk-padding-small" uk-slideshow uk-grid>
-            <div class="uk-width-auto@m">
-              <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
-                <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
-                <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
-                <li uk-slideshow-item="2"><a href="#"><img src="./images/plu3.jpg" width="60" alt=""></a></li>
-                <li uk-slideshow-item="3"><a href="#"><img src="./images/youtube.jpg" width="60" alt=""></a></li>
-              </ul>
-            </div>
-            <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
-              <ul class="uk-slideshow-items">
-                <li>
-                  <img src="./images/plu1.jpg" alt="" uk-cover>
-                </li>
-                <li>
-                  <img src="./images/plu2.jpg" alt="" uk-cover>
-                </li>
-                <li>
-                  <img src="./images/plu3.jpg" alt="" uk-cover>
-                </li>
-                <li>
-                  <iframe width="440" height="315" src="https://www.youtube.com/embed/TUUUh-51t1k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </li>
-              </ul>
-              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-            </div>
-          </div>
-
-          <div class="uk-padding-small">
-            <ul class="uk-list uk-list-divider">
-              <li>Price: $</li>
-              <li><a href="">Download</a> </li>
+<!-- This is the modal with the default close button -->
+<div id="plugin" class="uk-modal-container" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
+      <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
+      <div class="" name="col1" style="">
+        <div class="uk-padding-large uk-padding-remove-bottom" uk-slideshow uk-grid>
+          <div class="uk-width-auto@m">
+            <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
+              <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
+              <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
+              <li uk-slideshow-item="2"><a href="#"><img src="./images/plu3.jpg" width="60" alt=""></a></li>
+              <li uk-slideshow-item="3"><a href="#"><img src="./images/youtube.jpg" width="60" alt=""></a></li>
             </ul>
           </div>
-        </div>
-        <div class="uk-padding-small">
+          <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
+            <ul class="uk-slideshow-items">
+              <li>
+                <img src="./images/plu1.jpg" alt="" uk-cover>
+              </li>
+              <li>
+                <img src="./images/plu2.jpg" alt="" uk-cover>
+              </li>
+              <li>
+                <img src="./images/plu3.jpg" alt="" uk-cover>
+              </li>
+              <li>
+                <iframe width="640" height="515" src="https://www.youtube.com/embed/TUUUh-51t1k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </li>
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+          </div>
 
-          <p>
-            <div class="" data-reactid="">
-              <!-- react-empty: 482 -->
-              <div class="">Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays
-                full screen video with a customizable skip button<br> 2. Option to run Unity in the background<br> 3. Play videos without upgrading to Unity Pro<br><br> For Unity 4 &amp; 5 | 64bit Support | <a target="_blank" href="https://werplaydev.atlassian.net/wiki/x/XAA0">Documentation</a><br><br>                NOTE: Support for the basic version will not be exclusive. It's for the as it is use. If you want technical support then go for <a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/8098">WRP iOS Video Player Pro</a><br><br>                We’ll do our best to answer all support related questions, however the users of PRO version of this plugin will have priority. Please be patient if we take a little while to respond.
-                <br><br> A more powerful solution, the iOS Video Player PRO, is also available. <a target="_blank" href="https://www.assetstore.unity3d.com/#/content/8098">Grab it now-iOS Video Player PRO</a>.<br><br> We bet you like being appreciated
-                when you do something nice. So do we- so if you like it, please leave a nice little review.<br><br> For your feedback: <a target="_blank" href="mailto:unitysupport@werplay.com">unitysupport@werplay.com</a><br><br></div>
-            </div>
-          </p>
         </div>
+
+        <!-- <div class="uk-padding-small"> -->
+        <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom">
+          <tbody>
+            <tr>
+              <td style="color:#333333">Price: $</td>
+              <td style="color:#333333">Supported Versions: </td>
+            </tr>
+            <tr>
+              <td><a href="">Download</a></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- </div> -->
+      </div>
+      <div class="uk-padding-small">
+
+        <p>
+          <div class="" data-reactid="">
+            <!-- react-empty: 482 -->
+            <div class="">Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays full
+              screen video with a customizable skip button<br> 2. Option to run Unity in the background<br> 3. Play videos without upgrading to Unity Pro<br><br> For Unity 4 &amp; 5 | 64bit Support | <a target="_blank" href="https://werplaydev.atlassian.net/wiki/x/XAA0">Documentation</a><br><br>              NOTE: Support for the basic version will not be exclusive. It's for the as it is use. If you want technical support then go for <a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/8098">WRP iOS Video Player Pro</a><br><br>              We’ll do our best to answer all support related questions, however the users of PRO version of this plugin will have priority. Please be patient if we take a little while to respond.
+              <br><br> A more powerful solution, the iOS Video Player PRO, is also available. <a target="_blank" href="https://www.assetstore.unity3d.com/#/content/8098">Grab it now-iOS Video Player PRO</a>.<br><br> We bet you like being appreciated when
+              you do something nice. So do we- so if you like it, please leave a nice little review.<br><br> For your feedback: <a target="_blank" href="mailto:unitysupport@werplay.com">unitysupport@werplay.com</a><br><br></div>
+          </div>
+        </p>
       </div>
     </div>
   </div>
-
 </div>
 
 

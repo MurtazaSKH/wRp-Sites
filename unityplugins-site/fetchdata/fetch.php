@@ -15,24 +15,46 @@ if($func=="displayAllPlugins")
 
 
 
+			 // prevoius while used for isotope sorting
+       // while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
+       // {
+       //   echo '<div class="col col-lg-3 '.$row['category'].'" >
+			 //
+       //     <div class="uk-inline uk-slider-items uk-transition-toggle ">
+       //       <img src="'.$row['default_thumb'].'" alt="">
+       //       <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade" style="min-height:50%;">
+       //         <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
+       //           <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
+       //             Quick View
+       //           </div>
+       //         </a>
+       //         <p class="uk-padding-remove">'.$row['title'].'</p>
+       //       </div>
+       //     </div>
+       //   </div>
+       //   ';
+       //  }
 
-       while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
+			 // this one used for manual sorting with slider
+			 while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
        {
-         echo '<div class="col col-lg-3 '.$row['category'].'" >
 
-           <div class="uk-inline uk-slider-items uk-transition-toggle ">
-             <img src="'.$row['default_thumb'].'" alt="">
-             <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade" style="min-height:50%;">
-               <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
-                 <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-                   Quick View
-                 </div>
-               </a>
-               <p class="uk-padding-remove">'.$row['title'].'</p>
-             </div>
-           </div>
-         </div>
-         ';
+				 echo '<div class="swiper-slide assets uk-animation-slide-top-medium">
+					 <div class="uk-card uk-card-body">
+						 <div class="uk-inline uk-slider-items uk-transition-toggle">
+							 <img src="'.$row['default_thumb'].'" alt="">
+							 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+								 <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
+									 <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
+										 Quick View
+									 </div>
+								 </a>
+								 <p class="uk-padding-remove">'.$row['title'].'</p>
+							 </div>
+						 </div>
+					 </div>
+				 </div>';
+
         }
        }
 
