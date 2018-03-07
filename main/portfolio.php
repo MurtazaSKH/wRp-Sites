@@ -6,16 +6,16 @@
       <meta charset="utf-8">
       <title>we.R.play | Media</title>
       <meta name="description" content="Pakistani Indie Game Studio and Developer">
-      
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <link rel="stylesheet" href="./rsrc/plugins.min.css">
       <link rel="stylesheet" href="./rsrc/layerslider.css">
       <link rel="stylesheet" href="./rsrc/style.css">
-      <link href="./rsrc/hover.css" rel="stylesheet" media="all">      
-      
+      <link href="./rsrc/hover.css" rel="stylesheet" media="all">
+
       <link href="./rsrc/responsivemenu.css" rel="stylesheet" type="text/css">
       <!-- favicon -->
+      <link rel="stylesheet" href="./rsrc/css/uikit.css" type="text/css">
       <link rel="icon" type="image/png" href="./images/favicon.ico">
       <link rel="apple-touch-icon" sizes="57x57" href="./images/favicon.ico">
       <link rel="apple-touch-icon" sizes="72x72" href="./images/favicon.ico">
@@ -24,20 +24,21 @@
       <link rel="stylesheet" href="./rsrc/css/main.css" type="text/css">
       <!-- <link rel="stylesheet" href="./rsrc/css/base.css" type="text/css"> -->
       <link rel="stylesheet" href="./rsrc/css/share.css" type="text/css">
+
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
    </head>
    <body >
 
-      
+
          <header class="header" style="position:fixed; width:100%; background-color:white; z-index:100;">
             <!-- Header here -->
 
-            <?php 
+            <?php
 
-            include ('header.php'); 
+            include ('header.php');
 
             ?>
-            
+
          </header>
 
          <style>
@@ -46,7 +47,7 @@
             }
          </style>
 
-         <div class="content">
+         <div class="content" style="display:none;">
             <div class="share" id="scroll-top2" style="margin: 0px 50%;">
                <button class="share-toggle-button">
                   <i class="share-icon fa fa-bars"></i>
@@ -93,8 +94,8 @@
          </div>
 
          <div class="main" >
-            
-            
+
+
             <div id="main" name="main"  class="pt100 pb70 pb85-xs" style="background: url('./rsrc/images/aboutGames.jpg'); background-position: center center;  background-repeat: no-repeat;    background-size: cover; background-attachment:fixed;     padding: 4% 12%; ">
 
                <div class="container1" style="position:relative;">
@@ -153,7 +154,7 @@
                   </div>
                </div>
 
-               
+
 
             </div>
 
@@ -256,7 +257,7 @@
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/environment_concepts/thumbs/06 copy.jpg" />
                               </a>
                            </div>
-                           
+
                            <div class="col-sm-3" >
                               <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/environment_concepts/08.jpg">
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/environment_concepts/thumbs/08 copy.jpg" />
@@ -278,7 +279,7 @@
                               </a>
                            </div>
 
-                           
+
                   </div>
                </div>
 
@@ -292,7 +293,8 @@
                      <h3 class="title" style="color:#DFDFDF;">2D Art</h3>
                    <div class="row">
                            <div class="col-sm-3" >
-                              <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/2d_art/01.jpg">
+                              <a  class="button line-blue" href="#imagesGroup" uk-toggle>
+                                <!-- ./rsrc/images/portfolio/2d_art/01.jpg -->
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/2d_art/01.jpg" />
                               </a>
                            </div>
@@ -414,7 +416,7 @@
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/3d_art/thumbs/10.jpg" />
                               </a>
                            </div>
-                           
+
                   </div>
                </div>
 
@@ -438,7 +440,7 @@
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/character_concepts/thumbs/02.jpg" />
                               </a>
                            </div>
-                           
+
                            <div class="col-sm-3" >
                               <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/character_concepts/06.jpg">
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/character_concepts/thumbs/06.jpg" />
@@ -501,7 +503,7 @@
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/3d_models/thumbs/02.jpg" />
                               </a>
                            </div>
-                           
+
                            <div class="col-sm-3" >
                               <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/3d_models/03.jpg">
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/3d_models/thumbs/03.jpg" />
@@ -558,7 +560,7 @@
                               </a>
                            </div>
 
-                           
+
 
                            <div class="col-sm-3" >
                               <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/3d_models/12.jpg">
@@ -573,13 +575,15 @@
 
          </div>
          <footer class="footer" style="display:none;">
-            
+
             <?php include ('footer.php'); ?>
          </footer>
       <!-- <a id="scroll-top" href="#top" title="Scroll top" class=""><i class="fa fa-angle-up"></i></a> -->
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
       <script src="./rsrc/plugins.min.js"></script><script src="./rsrc/jquery.tweet.min.js"></script><script src="./rsrc/main.js"></script>
       <script src="./rsrc/js/lightcase.js"></script>
+      <script src="./rsrc/js/uikit.min.js"></script>
+      <script src="./rsrc/js/uikit-icons.min.js"></script>
       <script src="./rsrc/js/share.js"></script>
       <script src="./rsrc/js/TweenMax.min.js"></script>
       <script type="text/javascript">
@@ -616,7 +620,7 @@
       });
       </script>
 
-      
+
    </body>
    <style>
 
@@ -704,7 +708,7 @@
           top: 52%;
           background-size: 80px;
           opacity: 1;
-          background-image: url(./rsrc/images/loading.gif); 
+          background-image: url(./rsrc/images/loading.gif);
           background-repeat: no-repeat;
           /*background-position: center;*/
           /*margin: -60px 0 0 -64px;*/
@@ -718,7 +722,7 @@
           /*background-color: #ffffff;*/
           /*z-index: 10001;*/
       }
-      
+
    </style>
 
    <div id="loading">
@@ -726,4 +730,33 @@
          <div id="loader"></div>
       </div>
    </div>
+
+   <div id="imagesGroup" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <div class="uk-grid-collapse uk-flex-middle" uk-grid>
+            <div class="uk-background-cover uk-width-expand@m" style="overflow-y:scroll; overflow-x:Hidden; height:100vh !important;" >
+              <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/3d_models/08.jpg" />
+              <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/3d_models/09.jpg" />
+            </div>
+            <div class="uk-padding-large uk-width-1-3@m" style="background-color:#222222;">
+                <h1>Headline</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="uk-width-1-2@s uk-width-2-5@m uk-position-fixed" style="z-index:1000; top:50%; left:0;">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a href="#">Illustrations</a></li>
+        <li><a href="">Environment</a></li>
+        <li><a href="">2D Art</a></li>
+        <li><a href="">3D Art</a></li>
+        <li><a href="">Characters</a></li>
+        <li><a href="">3D Models</a></li>
+    </ul>
+</div>
+
+</div>
 </html>
