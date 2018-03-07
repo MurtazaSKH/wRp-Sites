@@ -5841,12 +5841,12 @@ ul.uk-nav-sub {
  * Take the same size as the Container component
  */
 .uk-modal-container .uk-modal-dialog {
-  /* width: 1200px; */
-  width: 1050px;
+  width: 1400px;
+  /* width: 1050px; */
 }
 
 .uk-modal-container-small .uk-modal-dialog {
-  width: 1000px;
+  /* width: 1000px; */
 }
 
 /*
