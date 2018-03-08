@@ -91,15 +91,16 @@ if($func=="updatePluginModal")
          echo '<div class="uk-modal-dialog uk-modal-body">
            <button class="uk-modal-close-default" type="button" uk-close></button>
            <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
-             <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
-             <div class="" name="col1" style="">';
+
+             <div class="" name="col1" style="" uk-grid>
+               <div class="uk-width-expand@m" name="col1-subdiv">';
 
 
              if(1)
                 {
                   $count=0;
-                  echo '<div class="uk-padding-large uk-padding-remove-bottom" uk-slideshow uk-grid>
-                    <div class="uk-width-auto@m">
+                  echo '<div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
+                    <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 490px;">
                       <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>';
 											foreach($pics as $file)
 						 					{
@@ -121,8 +122,8 @@ if($func=="updatePluginModal")
                         echo '
                       </ul>
                     </div>
-                    <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
-                      <ul class="uk-slideshow-items">';
+                    <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
+                      <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 490px">';
                       $count=0;
 											foreach($pics as $file)
 						 					{
@@ -132,7 +133,7 @@ if($func=="updatePluginModal")
 														if($file!="." and $file!="..")
 														{
 															// echo '<li><img src=".\images\plu1\\';
-															echo '<li><img src="'.$picdir.'\\';
+															echo '<li><img class="uk-preserve-width" style="width: auto !important; max-width: 785px !important; height: auto !important; max-height: 442px; !important" src="'.$picdir.'\\';
 															echo $file;
 															echo '" alt="" uk-cover>
 															</li>';
@@ -140,36 +141,48 @@ if($func=="updatePluginModal")
 														}
 						 					    }
 						 					}
-											echo '  </ul></div></div>';
+											echo '  </ul><a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                      <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a></div></div></div>';
 
 
              }
 
-              echo '<!-- <div class="uk-padding-small"> -->
-               <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom">
-                 <tbody>
-                   <tr>
-                     <td style="color:#333333">Price: $'.$row['Price'].'</td>
-                     <td style="color:#333333">Supported Versions: '.$row['supported_versions'].'</td>
-                   </tr>
-                   <tr>
-                     <td><a href="'.$row['Direct_link'].'">Download</a></td>
-                     <td></td>
-                   </tr>
-                 </tbody>
-               </table>
-               <!-- </div> -->
-             </div>
-             <div class="uk-padding-small">
 
-               <p>
-                 <div >
-                   '.$row['Description'].'
-                 </div>
-               </p>
-             </div>
-           </div>
-         </div>';
+				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2">
+           <!-- <div class="uk-padding-small"> -->
+           <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
+           <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+           <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
+             <tbody>
+               <tr>
+                 <td class="uk-text-left" style="color:#333333">Price: $'.$row['Price'].'</td>
+               </tr>
+               <tr>
+                 <td class="uk-text-left" style="color:#333333">Supported Versions: '.$row['supported_versions'].'</td>
+               </tr>
+               <tr>
+                 <td class="uk-text-left"><a href="'.$row['Direct_link'].'">Download</a></td>
+                 <td></td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+
+         </div>
+
+
+         <!-- </div> -->
+       </div>
+       <div class="uk-padding-small">
+
+         <p>
+				 <div >
+					 '.$row['Description'].'
+				 </div>
+         </p>
+       </div>
+     </div>
+   </div>';
 
 
         }

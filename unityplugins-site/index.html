@@ -20,7 +20,7 @@
   <script src="js/isotope.pkgd.min.js" defer></script>
   <script src="./fetchdata/fetch.js"></script>
   <script>
-    // getList();
+    getList();
     // testDBConnect();
   </script>
 </head>
@@ -294,10 +294,9 @@
 
       <div class="" name="col1" style="" uk-grid>
         <div class="uk-width-expand@m" name="col1-subdiv">
-          <!-- large padding removed from here -->
 
           <div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
-            <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px;">
+            <div class="uk-padding-small" style="overflow: scroll; overflow-x: hidden; padding-left:25px; height: 490px;">
               <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
                 <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
                 <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
@@ -306,12 +305,12 @@
               </ul>
             </div>
             <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
-              <ul class="uk-slideshow-items uk-width-1-1" style="max-height: 490px">
+              <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 490px">
                 <li>
-                  <img src="./images/plu1.jpg" alt="" uk-cover>
+                  <img style="uk-preserve-width" src="./images/plu1.jpg" alt="" uk-cover>
                 </li>
                 <li>
-                  <img src="./images/plutemp.jpg" alt="" uk-cover>
+                  <img style="uk-preserve-width" src="./images/plutemp.jpg" alt="" uk-cover>
                 </li>
                 <li>
                   <img src="./images/plu3.jpg" alt="" uk-cover>
