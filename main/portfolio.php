@@ -23,7 +23,7 @@
       <link rel="stylesheet" href="./rsrc/css/lightcase.css" type="text/css">
       <link rel="stylesheet" href="./rsrc/css/main.css" type="text/css">
       <!-- <link rel="stylesheet" href="./rsrc/css/base.css" type="text/css"> -->
-      <link rel="stylesheet" href="./rsrc/css/share.css" type="text/css">
+      <!-- <link rel="stylesheet" href="./rsrc/css/share.css" type="text/css"> -->
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
    </head>
@@ -44,6 +44,11 @@
          <style>
             .title {
                font-size: 3.5em !important;
+            }
+
+            .activeSideMenu {
+                padding:2px !important;
+                background: #11437d;
             }
          </style>
 
@@ -287,17 +292,21 @@
 
             <!-- 2d Art -->
 
-            <div id="2d" name="2d" class="pt100 pb70 pb85-xs" style="background: url('./rsrc/images/artBg.jpg'); background-position: center center;  background-repeat: no-repeat;    background-size: cover; background-attachment:fixed; border-top: 2px solid green;">
+            <div id="twod" name="twod" class="pt100 pb70 pb85-xs" style="background: url('./rsrc/images/artBg.jpg'); background-position: center center;  background-repeat: no-repeat;    background-size: cover; background-attachment:fixed; border-top: 2px solid green;">
 
                <div class="container1">
                      <h3 class="title" style="color:#DFDFDF;">2D Art</h3>
                    <div class="row">
                            <div class="col-sm-3" >
                               <a  class="button line-blue" href="#imagesGroup" uk-toggle>
-                                <!-- ./rsrc/images/portfolio/2d_art/01.jpg -->
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/2d_art/01.jpg" />
                               </a>
                            </div>
+                           <!-- <div class="col-sm-3" >
+                              <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/2d_art/01.jpg">
+                                 <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/2d_art/01.jpg" />
+                              </a>
+                           </div> -->
                            <div class="col-sm-3" >
                               <a  class="button line-blue" data-rel="lightcase:myCollection" href="./rsrc/images/portfolio/2d_art/02.jpg">
                                  <img xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%;" class="thumbnail videos-thumbnail" src="./rsrc/images/portfolio/2d_art/02.jpg" />
@@ -345,7 +354,7 @@
 
             <!-- 3D Art -->
 
-            <div id="3d" name="3d" class="pt100 pb70 pb85-xs" style="background: url('./rsrc/images/gameBg.png'); background-position: center center;  background-repeat: no-repeat;    background-size: cover; background-attachment:fixed; border-top: 2px solid yellow;">
+            <div id="threed" name="threed" class="pt100 pb70 pb85-xs" style="background: url('./rsrc/images/gameBg.png'); background-position: center center;  background-repeat: no-repeat;    background-size: cover; background-attachment:fixed; border-top: 2px solid yellow;">
 
                <div class="container1">
                      <h3 class="title" style="color:#DFDFDF;">3D Art</h3>
@@ -746,15 +755,17 @@
         </div>
     </div>
 </div>
-
-<div class="uk-width-1-2@s uk-width-2-5@m uk-position-fixed" style="z-index:1000; top:50%; left:0;">
-    <ul class="uk-nav uk-nav-default">
-        <li class="uk-active"><a href="#">Illustrations</a></li>
-        <li><a href="">Environment</a></li>
-        <li><a href="">2D Art</a></li>
-        <li><a href="">3D Art</a></li>
-        <li><a href="">Characters</a></li>
-        <li><a href="">3D Models</a></li>
+<!-- uk-width-1-4@m -->
+<!-- width:4% -->
+<!-- Fixed navbar on the right -->
+<div class="  uk-position-fixed .uk-width-small" style="z-index:1000; top:40%; right:0; width:4%; min-width:70px;">
+    <ul class="uk-nav uk-nav-default uk-padding-small " style="background:#2e87ef47;" uk-scrollspy-nav="closest: li; scroll: true; cls:activeSideMenu; overflow:false;">
+        <li class="uk-transition-toggle" uk-tooltip="title: Illustrations; pos: left"><a href="#Illustrations"><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/illustration1.png" /></a></li>
+        <li class="uk-transition-toggle" uk-tooltip="title: Environment Concepts; pos: left"><a href="#environment_concepts"><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/environment.png" /></a></li>
+        <li class="uk-transition-toggle" uk-tooltip="title: 2D Art; pos: left"><a href="#twod"><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/2dart.png" /></a></li>
+        <li class="uk-transition-toggle" uk-tooltip="title: 3D Art; pos: left"><a href="#threed"><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/3dart.png" /></a></li>
+        <li class="uk-transition-toggle" uk-tooltip="title: Characters; pos: left"><a href="#character"><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/character2.png" /></a></li>
+        <li class="uk-transition-toggle" uk-tooltip="title: 3D Models; pos: left"><a href="#models" ><img class="uk-transition-scale-up uk-transition-opaque" xmlns="http://www.w3.org/1999/xhtml" style="max-width:100%; padding:5px;" src="./rsrc/images/icons/3dmodel.png" /></a></li>
     </ul>
 </div>
 

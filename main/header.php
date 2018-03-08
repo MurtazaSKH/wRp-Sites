@@ -4,7 +4,7 @@
         // $(document).ready(function(){
 
         //     $('#hvr-bounce-to-top').each(function(index) {
-              
+
         //         if(this.href.trim() == window.location)
         //             $(this).addClass("selected");
         //         });
@@ -13,10 +13,17 @@
         $(document).ready(function() {
           var count=0;
             $("[href]").each(function() {
-              
+
             if (this.href == window.location.href) {
-                //alert("check1");
-                $(this).addClass("selectedlink");
+                // alert(this.href);
+                if (this.href.indexOf('#') != -1)
+                {
+
+                }
+                else {
+                  $(this).addClass("selectedlink");
+                }
+
                 //return;
                 }
 
@@ -76,4 +83,4 @@
     $("#mobile-check2").click(function () {
     $(".mobile-check2").slideToggle("slow");
     });
-  </script> 
+  </script>

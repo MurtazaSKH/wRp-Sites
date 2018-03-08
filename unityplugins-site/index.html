@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800%7CWork+Sans:200,300%7CJosefin+Sans:100" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/flickity.css" />
   <link rel="stylesheet" href="css/swiper.min.css" />
   <link rel="stylesheet" href="css/loading_animation.css" />
   <style>
@@ -19,7 +18,6 @@
   <script src="js/uikit.min.js" defer></script>
   <script src="js/uikit-icons.min.js" defer></script>
   <script src="js/isotope.pkgd.min.js" defer></script>
-  <script src="js/flickity.pkgd.min.js" defer></script>
   <script src="./fetchdata/fetch.js"></script>
   <script>
     // getList();
@@ -234,12 +232,6 @@
         return false;
       });
 
-      // Flickity carousel for modal
-      var $carousel = $('.carousel').flickity({
-        cellAlign: 'left',
-        contain: true
-      });
-      // Flickity carousel for plugins view
 
       // Initializing swiper
       var swiper = new Swiper('.swiper-container', {
@@ -295,15 +287,17 @@
 </body>
 
 <!-- This is the modal with the default close button -->
-<div id="plugin" class="uk-modal-container" uk-modal>
+<div id="plugin" class="uk-modal-container uk-flex-top uk-padding-remove-top uk-padding-remove-bottom" uk-modal>
   <div class="uk-modal-dialog uk-modal-body">
     <button class="uk-modal-close-default" type="button" uk-close></button>
     <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
-      <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
+
       <div class="" name="col1" style="" uk-grid>
         <div class="uk-width-expand@m" name="col1-subdiv">
-          <div class="uk-padding-large uk-padding-remove-bottom" uk-slideshow uk-grid>
-            <div class="uk-height-max-large" style="overflow: auto; overflow-x: hidden;">
+          <!-- large padding removed from here -->
+
+          <div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
+            <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px;">
               <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
                 <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
                 <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
@@ -311,13 +305,13 @@
                 <li uk-slideshow-item="3"><a href="#"><img src="./images/youtube.jpg" width="60" alt=""></a></li>
               </ul>
             </div>
-            <div class="uk-position-relative uk-visible-toggle uk-dark uk-width-expand@m">
-              <ul class="uk-slideshow-items">
+            <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
+              <ul class="uk-slideshow-items uk-width-1-1" style="max-height: 490px">
                 <li>
                   <img src="./images/plu1.jpg" alt="" uk-cover>
                 </li>
                 <li>
-                  <img src="./images/plu2.jpg" alt="" uk-cover>
+                  <img src="./images/plutemp.jpg" alt="" uk-cover>
                 </li>
                 <li>
                   <img src="./images/plu3.jpg" alt="" uk-cover>
@@ -333,6 +327,7 @@
         </div>
         <div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2">
           <!-- <div class="uk-padding-small"> -->
+          <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
           <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
           <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
             <tbody>

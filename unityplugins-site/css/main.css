@@ -84,7 +84,7 @@ html {
   /* 3 */
   background: #fff;
   color: #666;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 /*
@@ -92,6 +92,7 @@ html {
  */
 body {
   margin: 0;
+  line-height: 1.12 !important;
 }
 
 /* Links
