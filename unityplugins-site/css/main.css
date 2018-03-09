@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@font-face {
+    font-family: workSansFont;
+    src: url(WorkSans-Light.ttf);
+}
 /* ========================================================================
 [Table of contents]
 
@@ -74,9 +78,9 @@ Components:
  */
 html {
   /* 1 */
-  font-family: "Work Sans", sans-serif;
+  font-family: workSansFont, sans-serif;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 500;
   line-height: 1.5;
   /* 2 */
   -webkit-text-size-adjust: 100%;
@@ -1068,7 +1072,8 @@ a.uk-link-reset:hover,
 /* Cell
  ========================================================================== */
 .uk-table td {
-  padding: 16px 12px;
+  padding: 9px 4px;
+  /* 16px 12px */
   vertical-align: top;
 }
 

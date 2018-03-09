@@ -41,17 +41,16 @@ if($func=="displayAllPlugins")
 
 				 echo '<div class="swiper-slide assets uk-animation-slide-top-medium">
 					 <div class="uk-card uk-card-body">
+					 <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
 						 <div class="uk-inline uk-slider-items uk-transition-toggle">
 							 <img src="'.$row['default_thumb'].'" alt="">
 							 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
-								 <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
-									 <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-										 Quick View
-									 </div>
-								 </a>
+
+
 								 <p class="uk-padding-remove">'.$row['title'].'</p>
 							 </div>
 						 </div>
+						 </a>
 					 </div>
 				 </div>';
 
@@ -79,7 +78,7 @@ if($func=="updatePluginModal")
        {
          $picdir=$row['pics_folder'];
 				 // echo "folder name is $picdir";
-				 $pics=scandir($picdir,1);
+				 $pics=scandir($picdir);
 				 $picdir = substr($picdir, 1);
 				 // foreach($scan as $file)
 					// {
@@ -100,8 +99,8 @@ if($func=="updatePluginModal")
                 {
                   $count=0;
                   echo '<div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
-                    <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 490px;">
-                      <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>';
+                    <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 450px;">
+                      <ul class="uk-thumbnav uk-thumbnav-vertical uk-hidden@s	" uk-margin>';
 											foreach($pics as $file)
 						 					{
 
@@ -116,14 +115,11 @@ if($func=="updatePluginModal")
 															}
 						 					    }
 						 					}
-
-
-
                         echo '
                       </ul>
                     </div>
                     <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
-                      <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 490px">';
+                      <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 450px">';
                       $count=0;
 											foreach($pics as $file)
 						 					{
@@ -133,9 +129,9 @@ if($func=="updatePluginModal")
 														if($file!="." and $file!="..")
 														{
 															// echo '<li><img src=".\images\plu1\\';
-															echo '<li><img class="uk-preserve-width" style="width: auto !important; max-width: 785px !important; height: auto !important; max-height: 442px; !important" src="'.$picdir.'\\';
+															echo '<li><img class="uk-preserve-width uk-position-center" style="width: auto !important; max-width: 785px !important; height: auto !important; max-height: 442px; !important" src="'.$picdir.'\\';
 															echo $file;
-															echo '" alt="" uk-cover>
+															echo '" alt="">
 															</li>';
 															$count++;
 														}
@@ -148,11 +144,16 @@ if($func=="updatePluginModal")
              }
 
 
-				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2">
+				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px;">
            <!-- <div class="uk-padding-small"> -->
-           <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
-           <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-           <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
+					 <div style="width:400px">
+	           <h1 class=".uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
+					 </div>
+					 <div style="width:300px">
+           <img  src="'.$row['default_thumb'].'" alt="">
+         </div>
+           <div class="">
+           <table class="uk-table uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
              <tbody>
                <tr>
                  <td class="uk-text-left" style="color:#333333">Price: $'.$row['Price'].'</td>
@@ -161,7 +162,7 @@ if($func=="updatePluginModal")
                  <td class="uk-text-left" style="color:#333333">Supported Versions: '.$row['supported_versions'].'</td>
                </tr>
                <tr>
-                 <td class="uk-text-left"><a href="'.$row['Direct_link'].'">Download</a></td>
+                 <td class="uk-text-left"><a class="uk-button uk-button-primary" href="'.$row['Direct_link'].'">Buy from Asset Store</a></td>
                  <td></td>
                </tr>
              </tbody>

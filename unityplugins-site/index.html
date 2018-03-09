@@ -5,23 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>wRp plugins - in progress</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800%7CWork+Sans:200,300%7CJosefin+Sans:100" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800%7CWork+Sans:200,300%7CJosefin+Sans:100" rel="stylesheet"> -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/swiper.min.css" />
   <link rel="stylesheet" href="css/loading_animation.css" />
-  <style>
-    [class*="col-"] {
-      margin-bottom: 15px;
-    }
-  </style>
   <script src="js/uikit.min.js" defer></script>
   <script src="js/uikit-icons.min.js" defer></script>
-  <script src="js/isotope.pkgd.min.js" defer></script>
+  <!-- <script src="js/isotope.pkgd.min.js" defer></script> -->
   <script src="./fetchdata/fetch.js"></script>
   <script>
     getList();
     // testDBConnect();
+
   </script>
 </head>
 
@@ -92,7 +87,7 @@
 
       <hr class="uk-margin-remove uk-padding-small">
       <!-- isotope integration with bootstrap layout  -->
-      <div class="swiper-container">
+      <div class="swiper-container uk-width-1-1@s">
         <div class="swiper-wrapper " id="plugins_list">
           <div class="swiper-slide assets uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
@@ -101,7 +96,7 @@
                 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
                   <a href="#plugin" uk-toggle>
                     <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-                      Quick View
+                      View Details
                     </div>
                   </a>
                   <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
@@ -207,28 +202,28 @@
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script src="js/swiper.min.js" defer></script>
   <script>
     // initialize jquery
     $(document).ready(function() {
       // Select the container with items
-      $('.row').isotope({
-        // options
-        itemSelector: '.col',
-        layoutMode: 'fitRows',
-      });
+      // $('.row').isotope({
+      //   // options
+      //   itemSelector: '.col',
+      //   layoutMode: 'fitRows',
+      // });
 
       // Select the nav buttons and define onclick
       $('.uk-navbar ul li').click(function() {
         $('.uk-navbar ul li').removeClass('uk-active');
         $(this).addClass('uk-active');
 
-        var selector = $(this).attr('data-filter');
-        $('.row').isotope({
-          filter: selector
-        });
+        // var selector = $(this).attr('data-filter');
+        // $('.row').isotope({
+        //   filter: selector
+        // });
         return false;
       });
 
@@ -269,19 +264,12 @@
         swiper.update();
       });
 
-      // temporary load modal data into html
-      $("#temp-modal").load("pluginsdata.html");
+
+      $("body").on('DOMSubtreeModified', ".swiper-container", function() {
+        alert('dom change called');
+          swiper.update();
+      });
     });
-
-    function hA() {
-      // UIkit.toggle('.assets').toggle();
-      // $('.swiper-slide').hide();
-    }
-
-    function sA() {
-      // $('.assets').show();
-      // $swiper.update();
-    }
   </script>
 
 </body>
@@ -296,7 +284,7 @@
         <div class="uk-width-expand@m" name="col1-subdiv">
 
           <div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
-            <div class="uk-padding-small" style="overflow: scroll; overflow-x: hidden; padding-left:25px; height: 490px;">
+            <div class="uk-padding-small" style="overflow: scroll; overflow-x: hidden; padding-left:25px; height: 450px;">
               <ul class="uk-thumbnav uk-thumbnav-vertical" uk-margin>
                 <li uk-slideshow-item="0"><a href="#"><img src="./images/plu1.jpg" width="60" alt=""></a></li>
                 <li uk-slideshow-item="1"><a href="#"><img src="./images/plu2.jpg" width="60" alt=""></a></li>
@@ -307,13 +295,13 @@
             <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
               <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 490px">
                 <li>
-                  <img style="uk-preserve-width" src="./images/plu1.jpg" alt="" uk-cover>
+                  <img style="uk-preserve-width uk-position-center" style="width: auto !important; max-width: 785px !important; height: auto !important; max-height: 442px; !important" src="./images/plu1.jpg" alt="">
                 </li>
                 <li>
-                  <img style="uk-preserve-width" src="./images/plutemp.jpg" alt="" uk-cover>
+                  <img style="uk-preserve-width" src="./images/plutemp.jpg" alt="">
                 </li>
                 <li>
-                  <img src="./images/plu3.jpg" alt="" uk-cover>
+                  <img src="./images/plu3.jpg" alt="">
                 </li>
                 <li>
                   <iframe width="640" height="515" src="https://www.youtube.com/embed/TUUUh-51t1k?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -326,9 +314,15 @@
         </div>
         <div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2">
           <!-- <div class="uk-padding-small"> -->
+          <div style="width:400px">
           <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
-          <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-          <table class="uk-table uk-table-hover uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
+        </div>
+          <div style="max-width:400px">
+          <img src="./images/plutemp.jpg" alt="">
+        </div>
+        <!-- uk-padding-large uk-padding-remove-left uk-padding-remove-right -->
+          <div class="">
+          <table class="uk-table uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
             <tbody>
               <tr>
                 <td class="uk-text-left" style="color:#333333">Price: $</td>
@@ -337,7 +331,7 @@
                 <td class="uk-text-left" style="color:#333333">Supported Versions: </td>
               </tr>
               <tr>
-                <td class="uk-text-left"><a href="">Download</a></td>
+                <td class="uk-text-left"><a class="uk-button uk-button-primary" href="">Buy from Asset Store</a></td>
                 <td></td>
               </tr>
             </tbody>
