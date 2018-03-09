@@ -100,7 +100,7 @@ if($func=="updatePluginModal")
                   $count=0;
                   echo '<div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
                     <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 450px;">
-                      <ul class="uk-thumbnav uk-thumbnav-vertical uk-hidden@s	" uk-margin>';
+                      <ul class="uk-thumbnav uk-thumbnav-vertical uk-visible@m " uk-margin>';
 											foreach($pics as $file)
 						 					{
 
@@ -144,13 +144,13 @@ if($func=="updatePluginModal")
              }
 
 
-				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px;">
+				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px; max-width: 300px;">
            <!-- <div class="uk-padding-small"> -->
-					 <div style="width:400px">
+					 <div style="width:300px">
 	           <h1 class=".uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
 					 </div>
-					 <div style="width:300px">
-           <img  src="'.$row['default_thumb'].'" alt="">
+					 <div style="max-width:300px">
+           <img  src="'.$row['default_thumb'].'"uk- alt="">
          </div>
            <div class="">
            <table class="uk-table uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
