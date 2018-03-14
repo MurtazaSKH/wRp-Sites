@@ -12,29 +12,6 @@ if($func=="displayAllPlugins")
    	$result = mysqli_query($db,$query);
 	if(mysqli_num_rows($result) > 0)
      {
-
-
-
-			 // prevoius while used for isotope sorting
-       // while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
-       // {
-       //   echo '<div class="col col-lg-3 '.$row['category'].'" >
-			 //
-       //     <div class="uk-inline uk-slider-items uk-transition-toggle ">
-       //       <img src="'.$row['default_thumb'].'" alt="">
-       //       <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade" style="min-height:50%;">
-       //         <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
-       //           <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-       //             Quick View
-       //           </div>
-       //         </a>
-       //         <p class="uk-padding-remove">'.$row['title'].'</p>
-       //       </div>
-       //     </div>
-       //   </div>
-       //   ';
-       //  }
-
 			 // this one used for manual sorting with slider
 			 while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
        {
@@ -87,7 +64,7 @@ if($func=="updatePluginModal")
 					//         echo $file.'\n';
 					//     }
 					// }
-         echo '<div class="uk-modal-dialog uk-modal-body">
+         echo '<div class="uk-modal-dialog uk-modal-body uk-padding-remove-bottom" style="overflow-y: auto; max-height: 100%;">
            <button class="uk-modal-close-default" type="button" uk-close></button>
            <div class="uk-grid-collapse uk-child-width-1-1@s uk-flex-middle" uk-grid>
 
@@ -99,7 +76,7 @@ if($func=="updatePluginModal")
                 {
                   $count=0;
                   echo '<div class=" uk-padding-remove-bottom" uk-slideshow uk-grid>
-                    <div class="uk-padding-small" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 450px;">
+                    <div class="uk-padding-small uk-padding-remove-bottom" style="overflow: auto; overflow-x: hidden; padding-left:25px; height: 450px;">
                       <ul class="uk-thumbnav uk-thumbnav-vertical uk-visible@m " uk-margin>';
 											foreach($pics as $file)
 						 					{
@@ -143,6 +120,12 @@ if($func=="updatePluginModal")
 
              }
 
+						 if(strlen($row['Description']) >1200)
+						 {
+							 $firsthalf = substr($row['Description'], 0, 1200);
+			 				$secondhalf = substr($row['Description'],1200);
+						 }
+
 
 				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px; max-width: 300px;">
            <!-- <div class="uk-padding-small"> -->
@@ -177,9 +160,33 @@ if($func=="updatePluginModal")
        <div class="uk-padding-small">
 
          <p>
-				 <div >
-					 '.$row['Description'].'
-				 </div>
+				 <div>';
+				 if(strlen($row['Description'])>1200)
+				 {
+					 echo '<div id="halfDesc">
+					 '.$firsthalf.'
+					 </div>
+
+					 <div style="display:none;">
+					 ""
+					 </div>
+
+
+					 <div id="fullDesc" style="display:none;">
+					 		'.$secondhalf.'
+					 </div>
+
+					 <div id="moreless" onclick="morelesstoggle()" class="uk-padding-small uk-button" style="display:inline;" >
+					 	 Show More..
+					 </div>';
+
+				 }
+				 else {
+				 	echo $row['Description'];
+				 }
+
+
+				 echo '</div>
          </p>
        </div>
      </div>
@@ -187,6 +194,52 @@ if($func=="updatePluginModal")
 
 
         }
+       }
+
+}
+
+
+////////////////////////////////////////// get all plugins for list//////////////////////////////////
+
+if($func=="viewSlides")
+{
+	$query1=("SELECT * FROM plugin_main where slide IS NOT NULL ORDER BY slide ASC");
+
+   	$result1 = mysqli_query($db,$query1);
+	if(mysqli_num_rows($result1) > 0)
+     {
+			 echo '<div uk-slideshow="animation: fade; min-height: 300; max-height: 442">
+
+         <div class="uk-position-relative uk-visible-toggle uk-light">
+
+           <ul class="uk-slideshow-items" >';
+			 while($row1 = mysqli_fetch_array($result1,MYSQLI_BOTH))
+       {
+				 $picdir1=$row1['pics_folder'];
+				 // echo "folder name is $picdir";
+				 $picdir1 = substr($picdir1, 1);
+
+				 echo '<li>
+					 <img class="uk-position-center" style="z-index:0;  height:100%" src="'.$row1['default_thumb'].'" alt="" >
+					 <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="'.$picdir1.'\1.jpg" alt="" >
+					 <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="'.$picdir1.'\2.jpg" alt="" >
+				 </li>';
+
+        }
+				echo '</ul>
+				<div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
+				<h2 >Welcome to Unity Plugins</h2>
+				<p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+
+				<a class="uk-position-center-left uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+				<a class="uk-position-center-right uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+			</div>
+
+			<ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+		</div>';
        }
 
 }

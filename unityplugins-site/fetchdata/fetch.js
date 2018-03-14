@@ -28,13 +28,51 @@ function getList() {
   xmlhttp.onreadystatechange = getList_callback;
   xmlhttp.open("GET", url, true);
   xmlhttp.send(null);
+
+  // var url = "./fetchdata/fetch.php";
+  // url = url + "?func=viewSlides";
+  // url = url + "&sid=" + Math.random();
+  // xmlhttp.onreadystatechange = getSlides_callback;
+  // xmlhttp.open("GET", url, true);
+  // xmlhttp.send(null);
 }
 
 function getList_callback() {
   if (xmlhttp.readyState == 4) {
     var response = xmlhttp.responseText;
     if (response != "undefined") {
-      document.getElementById("plugins_list").innerHTML = response
+      console.log('plugins_list called');
+      document.getElementById("plugins_list").innerHTML = response;
+    } else {
+      // make a sample div for could not load error etc.
+    }
+  }
+}
+
+///////////////////////////////////////////////////// get slides
+// load 3 slides based on selected by the user
+function getSlides() {
+  xmlhttp = GetXmlHttpObject();
+  if (xmlhttp == null) {
+    alert("Browser does not support HTTP Request");
+    return;
+  }
+  var url = "./fetchdata/fetch.php";
+  url = url + "?func=viewSlides";
+  url = url + "&sid=" + Math.random();
+  xmlhttp.onreadystatechange = getSlides_callback;
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send(null);
+
+}
+
+function getSlides_callback() {
+  if (xmlhttp.readyState == 4) {
+    var response = xmlhttp.responseText;
+    if (response != "undefined") {
+      // console.log('getSlides called');
+      document.getElementById("loadSlides").innerHTML = response;
+      getList();
     } else {
       // make a sample div for could not load error etc.
     }
@@ -94,4 +132,10 @@ function testDBConnect_callback() {
     var response = xmlhttp.responseText;
     alert(response);
   }
+}
+
+///////////////////////////////////////////////////// Function to test localhost connection
+function morelesstoggle() {
+  document.getElementById('fullDesc').style.display="inline";
+  document.getElementById('moreless').style.display="none";
 }

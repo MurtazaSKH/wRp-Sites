@@ -14,8 +14,7 @@
   <!-- <script src="js/isotope.pkgd.min.js" defer></script> -->
   <script src="./fetchdata/fetch.js"></script>
   <script>
-    getList();
-    // testDBConnect();
+    getSlides();
 
   </script>
 </head>
@@ -51,24 +50,63 @@
 </nav> -->
 
 
-  <section class="uk-margin-large-top">
+  <!-- <section class="uk-margin-large-top">
     <div class="uk-container">
 
       <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
 
 
       <article class="uk-article uk-margin-xlarge-top">
-        <!-- <h2 id="article-1" class="uk-article-title uk-margin-medium-bottom">Lorem Ipsum H2<a href="#" data-uk-totop data-uk-scroll="duration: 400" class="tm-totop uk-float-right uk-margin-small-top"></a></h2> -->
         <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
           alias consequatur aut perferendis doloribus asperiores repellat.</p>
         <p>At vero eos et accusamus et iusto erunt impedit quo minus facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibue. Itaque earum rerendis doloribus asperiores repellat.</p>
       </article>
 
     </div>
+  </section> -->
+  <section class="uk-margin-large-top uk-margin-remove-bottom">
+    <div class="uk-container" id="loadSlides">
+
+      <div uk-slideshow="animation: fade; min-height: 300; max-height: 442">
+
+        <div class="uk-position-relative uk-visible-toggle uk-light">
+
+          <ul class="uk-slideshow-items" >
+            <li>
+              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu3.jpg" alt="" >
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="" >
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu2.jpg" alt="" >
+            </li>
+            <li>
+              <img class="uk-position-center" style="z-index:0; height:100%" src="./images/plu7.jpg" alt="" >
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/1.jpg" alt="" >
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/2.jpg" alt="" >
+            </li>
+            <li>
+              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu2.jpg" alt="" >
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu3.jpg" alt="" >
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="" >
+            </li>
+          </ul>
+          <div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
+          <h2 >Welcome to Unity Plugins</h2>
+          <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+
+          <a class="uk-position-center-left uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+        </div>
+
+        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+      </div>
+
+    </div>
   </section>
 
   <!-- Container for viewing plugins in grid/slider -->
-  <div class="uk-margin-large-top uk-section-primary" style="min-height:250px;" id="plugins">
+  <div class=" uk-section-primary" style="min-height:250px;" id="plugins">
 
     <!-- Nav bar displayed full width and sticky on scroll -->
     <div class="uk-container-expand " style="background-color:#1c2024; box-shadow: 3px 11px 13px 0px #151313; " data-uk-sticky="sel-target: .uk-navbar; cls-active: uk-navbar-sticky; offset:77">
@@ -243,8 +281,17 @@
         },
       });
 
-      // Sorting the slides based on category
+      // show more/less Toggle
+      $('#morelesstoggle').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        console.log('More less clicked');
+        // $('#halfDesc').hide();
+        // $('#fullDesc').show();
 
+        // swiper.update();
+      });
+
+      // Sorting the slides based on category
       $('#all').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
@@ -267,7 +314,7 @@
 
       $("body").on('DOMSubtreeModified', ".swiper-container", function() {
         console.log('dom change called');
-          swiper.update();
+        swiper.update();
       });
     });
   </script>
@@ -292,13 +339,13 @@
                 <li uk-slideshow-item="3"><a href="#"><img src="./images/youtube.jpg" width="60" alt=""></a></li>
               </ul>
             </div>
-            <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m" >
+            <div class="uk-position-relative uk-padding-remove-left uk-visible-toggle uk-dark uk-width-expand@m">
               <ul class="uk-slideshow-items uk-width-1-1 " style="max-height: 490px">
                 <li>
                   <img style="uk-preserve-width uk-position-center" style="width: auto !important; max-width: 785px !important; height: auto !important; max-height: 442px; !important" src="./images/plu1.jpg" alt="">
                 </li>
                 <li>
-                  <img style="uk-preserve-width" src="./images/plutemp.jpg" alt="">
+                  <img style="uk-preserve-width" src="./images/plu2.jpg" alt="">
                 </li>
                 <li>
                   <img src="./images/plu3.jpg" alt="">
@@ -315,28 +362,28 @@
         <div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2">
           <!-- <div class="uk-padding-small"> -->
           <div style="width:400px">
-          <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
-        </div>
+            <h1 class="uk-text-center .uk-text-small" style="font-size: 1.5rem !important;">WRP IOS Video Player</h1>
+          </div>
           <div style="max-width:400px">
-          <img src="./images/plutemp.jpg" alt="">
-        </div>
-        <!-- uk-padding-large uk-padding-remove-left uk-padding-remove-right -->
+            <img src="" alt="">
+          </div>
+          <!-- uk-padding-large uk-padding-remove-left uk-padding-remove-right -->
           <div class="">
-          <table class="uk-table uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
-            <tbody>
-              <tr>
-                <td class="uk-text-left" style="color:#333333">Price: $</td>
-              </tr>
-              <tr>
-                <td class="uk-text-left" style="color:#333333">Supported Versions: </td>
-              </tr>
-              <tr>
-                <td class="uk-text-left"><a class="uk-button uk-button-primary" href="">Buy from Asset Store</a></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+            <table class="uk-table uk-table-divider uk-dark uk-margin-remove-bottom uk-text-left ">
+              <tbody>
+                <tr>
+                  <td class="uk-text-left" style="color:#333333">Price: $</td>
+                </tr>
+                <tr>
+                  <td class="uk-text-left" style="color:#333333">Supported Versions: </td>
+                </tr>
+                <tr>
+                  <td class="uk-text-left"><a class="uk-button uk-button-primary" href="">Buy from Asset Store</a></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
         </div>
 
@@ -348,10 +395,21 @@
         <p>
           <div class="" data-reactid="">
             <!-- react-empty: 482 -->
-            <div class="">Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays full
+            <div class="">
+              <div id="halfDesc">
+              </div>
+              <div id="fullDesc"style="display:none;">
+              </div>
+
+
+              Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays full
               screen video with a customizable skip button<br> 2. Option to run Unity in the background<br> 3. Play videos without upgrading to Unity Pro<br><br> For Unity 4 &amp; 5 | 64bit Support | <a target="_blank" href="https://werplaydev.atlassian.net/wiki/x/XAA0">Documentation</a><br><br>              NOTE: Support for the basic version will not be exclusive. It's for the as it is use. If you want technical support then go for <a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/8098">WRP iOS Video Player Pro</a><br><br>              We’ll do our best to answer all support related questions, however the users of PRO version of this plugin will have priority. Please be patient if we take a little while to respond.
               <br><br> A more powerful solution, the iOS Video Player PRO, is also available. <a target="_blank" href="https://www.assetstore.unity3d.com/#/content/8098">Grab it now-iOS Video Player PRO</a>.<br><br> We bet you like being appreciated when
-              you do something nice. So do we- so if you like it, please leave a nice little review.<br><br> For your feedback: <a target="_blank" href="mailto:unitysupport@werplay.com">unitysupport@werplay.com</a><br><br></div>
+              you do something nice. So do we- so if you like it, please leave a nice little review.<br><br> For your feedback: <a target="_blank" href="mailto:unitysupport@werplay.com">unitysupport@werplay.com</a><br><br>
+              <div onclick="morelesstoggle()" class="uk-padding-small uk-button">
+                Show More..
+              </div>
+            </div>
           </div>
         </p>
       </div>
