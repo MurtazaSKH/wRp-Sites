@@ -37,7 +37,7 @@
               <li><a href="#plugins" uk-scroll="offset:80">Plugins</a></li>
               <li><a href="#">About</a></li>
             </ul>
-            <a class="uk-navbar-toggle " href="#search" data-uk-search-icon data-uk-toggle></a>
+            <!-- <a class="uk-navbar-toggle " href="#search" data-uk-search-icon data-uk-toggle></a> -->
             <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
           </div>
         </div>
@@ -50,20 +50,20 @@
 </nav> -->
 
 
-  <!-- <section class="uk-margin-large-top">
+  <section class="uk-margin-large-top">
     <div class="uk-container">
 
-      <h2 class="uk-margin-medium-bottom uk-text-center">Welcome to Unity Plugins</h2>
+      <h2 class="uk-margin-medium-bottom uk-text-center" style="color:#3e4042; font-family: 'Nunito Sans', sans-serif;">Welcome to Unity Plugins</h2>
 
 
-      <article class="uk-article uk-margin-xlarge-top">
+      <!-- <article class="uk-article uk-margin-xlarge-top">
         <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores
           alias consequatur aut perferendis doloribus asperiores repellat.</p>
         <p>At vero eos et accusamus et iusto erunt impedit quo minus facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibue. Itaque earum rerendis doloribus asperiores repellat.</p>
-      </article>
+      </article> -->
 
     </div>
-  </section> -->
+  </section>
   <section class="uk-margin-large-top uk-margin-remove-bottom">
     <div class="uk-container" id="loadSlides">
 
@@ -88,10 +88,10 @@
               <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="" >
             </li>
           </ul>
-          <div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
+          <!-- <div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
           <h2 >Welcome to Unity Plugins</h2>
           <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+        </div> -->
 
           <a class="uk-position-center-left uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
           <a class="uk-position-center-right uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
@@ -113,9 +113,11 @@
       <nav class="uk-navbar uk-text-center uk-container" style="z-index: 980;">
         <ul class="uk-navbar-nav uk-tab-top" style="margin: auto;" uk-tab>
           <li id="all"><a href="">All</a></li>
-          <li id="assets"><a href="">Assets</a></li>
-          <li id="social"><a href="">Social</a></li>
-          <li class=""><a href="">iOS/Android</a></li>
+          <li id="artasset"><a href="">Art Assets</a></li>
+          <li id="Editor"><a href="">Editor Utilities</a></li>
+          <li id="GameKit"><a href="">Game Kits</a></li>
+          <li id="iOSMac"><a href="">iOS/MAC Plugins</a></li>
+          <li id="Android"><a href="">Android Plugins</a></li>
         </ul>
       </nav>
     </div>
@@ -127,11 +129,12 @@
       <!-- isotope integration with bootstrap layout  -->
       <div class="swiper-container uk-width-1-1@s">
         <div class="swiper-wrapper " id="plugins_list">
-          <div class="swiper-slide assets uk-animation-slide-top-medium">
+          <div class="swiper-slide Art-Assets uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
                 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+                  <!-- removed transition for overlay here -->
                   <a href="#plugin" uk-toggle>
                     <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
                       View Details
@@ -143,7 +146,7 @@
             </div>
           </div>
 
-          <div class="swiper-slide social uk-animation-slide-top-medium">
+          <div class="swiper-slide iOSMac Android uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
@@ -281,15 +284,6 @@
         },
       });
 
-      // show more/less Toggle
-      $('#morelesstoggle').on('click', function() {
-        // UIkit.toggle('.swiper-slide').toggle();
-        console.log('More less clicked');
-        // $('#halfDesc').hide();
-        // $('#fullDesc').show();
-
-        // swiper.update();
-      });
 
       // Sorting the slides based on category
       $('#all').on('click', function() {
@@ -298,24 +292,54 @@
         $('.swiper-slide').show();
         swiper.update();
       });
-      $('#assets').on('click', function() {
+      $('#artasset').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
-        $('.assets').show();
-        swiper.update();
+        $('.ArtAssets').show();
+        // $('.GameKit').hide();
+        // $('.iOSMac').hide();
+        // $('.Android').hide();
+
+        // setTimeout(function () {
+        //   swiper.params.slidesPerView=3;
+        //  swiper.update();
+        // }, 500);
+        // swiper.update(true);
+
+
       });
-      $('#social').on('click', function() {
+      $('#Editor').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
-        $('.social').show();
-        swiper.update();
+        $('.Editor').show();
+        // swiper.update(true);
+      });
+      $('#GameKit').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.GameKit').show();
+        // swiper.update();
+      });
+      $('#iOSMac').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.iOSMac').show();
+        // swiper.update();
+      });
+      $('#Android').on('click', function() {
+        // UIkit.toggle('.swiper-slide').toggle();
+        $('.swiper-slide').hide();
+        $('.Android').show();
+        // swiper.update();
       });
 
 
       $("body").on('DOMSubtreeModified', ".swiper-container", function() {
-        console.log('dom change called');
-        swiper.update();
+        //  swiper.update();
       });
+//       swiper.on('slideChange', function () {
+//   console.log('slide changed');
+// });
     });
   </script>
 

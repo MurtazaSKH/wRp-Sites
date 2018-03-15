@@ -41,7 +41,7 @@ function getList_callback() {
   if (xmlhttp.readyState == 4) {
     var response = xmlhttp.responseText;
     if (response != "undefined") {
-      console.log('plugins_list called');
+      // console.log('plugins_list called');
       document.getElementById("plugins_list").innerHTML = response;
     } else {
       // make a sample div for could not load error etc.

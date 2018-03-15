@@ -326,11 +326,11 @@ h4, .uk-h4,
 h5, .uk-h5,
 h6, .uk-h6 {
   margin: 0 0 20px 0;
-  font-family: "Nunito Sans", sans-serif;
+  /* font-family: "Nunito Sans", sans-serif; */
   font-weight: 800;
   color: #333;
   text-transform: none;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 
 /* Add margin if adjacent element */

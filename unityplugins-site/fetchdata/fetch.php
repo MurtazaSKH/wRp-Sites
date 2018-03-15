@@ -16,12 +16,12 @@ if($func=="displayAllPlugins")
 			 while($row = mysqli_fetch_array($result,MYSQLI_BOTH))
        {
 
-				 echo '<div class="swiper-slide assets uk-animation-slide-top-medium">
+				 echo '<div class="swiper-slide '.$row['category'].' uk-animation-slide-top-medium">
 					 <div class="uk-card uk-card-body">
 					 <a href="#plugin" onclick="updateModal('.$row['plugin_id'].')" uk-toggle>
 						 <div class="uk-inline uk-slider-items uk-transition-toggle">
 							 <img src="'.$row['default_thumb'].'" alt="">
-							 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
+							 <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom ">
 
 
 								 <p class="uk-padding-remove">'.$row['title'].'</p>
@@ -87,7 +87,7 @@ if($func=="updatePluginModal")
 															{
 																echo '<li uk-slideshow-item="'.$count.'"><a href="#"><img src="'.$picdir.'\\';
 																echo $file;
-																echo '" width="60" alt=""></a></li>';
+																echo '" width="90" alt=""></a></li>';
 																$count++;
 															}
 						 					    }
@@ -127,12 +127,12 @@ if($func=="updatePluginModal")
 						 }
 
 
-				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px; max-width: 300px;">
+				 echo '<div style="uk-width-1-3@m uk-text-bottom " name="col1-subdiv2" style="max-height: 450px; max-width: 260px;">
            <!-- <div class="uk-padding-small"> -->
-					 <div style="width:300px">
+					 <div style="width:260px">
 	           <h1 class=".uk-text-small" style="font-size: 1.5rem !important;">'.$row['title'].'</h1>
 					 </div>
-					 <div style="max-width:300px">
+					 <div style="max-width:260px">
            <img  src="'.$row['default_thumb'].'"uk- alt="">
          </div>
            <div class="">
@@ -227,10 +227,7 @@ if($func=="viewSlides")
 
         }
 				echo '</ul>
-				<div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
-				<h2 >Welcome to Unity Plugins</h2>
-				<p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			</div>
+
 
 				<a class="uk-position-center-left uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
 				<a class="uk-position-center-right uk-position-small uk-slidenav-large" style="color:white; background: #00000040;" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
