@@ -14,8 +14,7 @@
   <!-- <script src="js/isotope.pkgd.min.js" defer></script> -->
   <script src="./fetchdata/fetch.js"></script>
   <script>
-    getSlides();
-
+    // getSlides();
   </script>
 </head>
 
@@ -71,21 +70,21 @@
 
         <div class="uk-position-relative uk-visible-toggle uk-light">
 
-          <ul class="uk-slideshow-items" >
+          <ul class="uk-slideshow-items">
             <li>
-              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu3.jpg" alt="" >
-              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="" >
-              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu2.jpg" alt="" >
+              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu3.jpg" alt="">
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="">
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu2.jpg" alt="">
             </li>
             <li>
-              <img class="uk-position-center" style="z-index:0; height:100%" src="./images/plu7.jpg" alt="" >
-              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/1.jpg" alt="" >
-              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/2.jpg" alt="" >
+              <img class="uk-position-center" style="z-index:0; height:100%" src="./images/plu7.jpg" alt="">
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/1.jpg" alt="">
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu7/2.jpg" alt="">
             </li>
             <li>
-              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu2.jpg" alt="" >
-              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu3.jpg" alt="" >
-              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="" >
+              <img class="uk-position-center" style="z-index:0;  height:100%" src="./images/plu2.jpg" alt="">
+              <img class="uk-position-left" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu3.jpg" alt="">
+              <img class="uk-position-right" style="z-index:-1; height:100%; opacity:0.7" src="./images/plu1.jpg" alt="">
             </li>
           </ul>
           <!-- <div class=" uk-text-center uk-overlay uk-light uk-position-center" style="padding: 30px; background-color: #000000b8;">
@@ -118,6 +117,7 @@
           <li id="GameKit"><a href="">Game Kits</a></li>
           <li id="iOSMac"><a href="">iOS/MAC Plugins</a></li>
           <li id="Android"><a href="">Android Plugins</a></li>
+          <li id="refreshSwiper"><a href="">refreshSwiper</a></li>
         </ul>
       </nav>
     </div>
@@ -129,28 +129,62 @@
       <!-- isotope integration with bootstrap layout  -->
       <div class="swiper-container uk-width-1-1@s">
         <div class="swiper-wrapper " id="plugins_list">
-          <div class="swiper-slide Art-Assets uk-animation-slide-top-medium">
+          <div class="swiper-slide ArtAssets uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
-                <div class="uk-overlay uk-overlay-primary uk-remove-padding uk-position-bottom uk-transition-fade">
-                  <!-- removed transition for overlay here -->
-                  <a href="#plugin" uk-toggle>
-                    <div class=" uk-overlay-primary uk-transition-fade  uk-width-1-1 uk-position-top uk-text-center  ">
-                      View Details
-                    </div>
-                  </a>
-                  <p class="uk-padding-remove">Default Lorem ipsum dolor sit amet.</p>
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide Editor uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide Editor uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide iOSMac Android uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide ArtAssets uk-animation-slide-top-medium">
+            <div class="uk-card uk-card-body">
+              <div class="uk-inline uk-slider-items uk-transition-toggle">
+                <img src="./images/plu2.jpg" alt="">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                  <p>Default Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="swiper-slide iOSMac Android uk-animation-slide-top-medium">
+          <div class="swiper-slide ArtAssets uk-animation-slide-top-medium">
             <div class="uk-card uk-card-body">
               <div class="uk-inline uk-slider-items uk-transition-toggle">
                 <img src="./images/plu2.jpg" alt="">
-                <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-transition-fade">
+                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
                   <p>Default Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
@@ -270,7 +304,22 @@
 
 
       // Initializing swiper
-      var swiper = new Swiper('.swiper-container', {
+      // var swiper = new Swiper('.swiper-container', {
+      //   slidesPerView: 3,
+      //   slidesPerColumn: 2,
+      //   spaceBetween: 30,
+      //   observer: true,
+      //   observeParents: true,
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev',
+      //   },
+      //   pagination: {
+      //     el: '.swiper-pagination',
+      //     clickable: true,
+      //   },
+      // });
+      var settings = {
         slidesPerView: 3,
         slidesPerColumn: 2,
         spaceBetween: 30,
@@ -282,29 +331,32 @@
           el: '.swiper-pagination',
           clickable: true,
         },
-      });
+        },
+        swiper = new Swiper('.swiper-container', settings);
 
+        $('#refreshSwiper').on('click', function() {
+          swiper.update();
+        });
 
       // Sorting the slides based on category
       $('#all').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.swiper-slide').show();
-        swiper.update();
+        // swiper.update();
       });
       $('#artasset').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.ArtAssets').show();
-        // $('.GameKit').hide();
-        // $('.iOSMac').hide();
-        // $('.Android').hide();
-
-        // setTimeout(function () {
-        //   swiper.params.slidesPerView=3;
-        //  swiper.update();
-        // }, 500);
         // swiper.update(true);
+
+        // var swiperWrapper = $('.swiper-wrapper'),
+        // newSlides = $('#plugins_list').children('.swiper-slide').clone(true);
+        // swiper.destroy(true,true);
+        // swiperWrapper.empty().append(newSlides);
+        // $('.swiper-wrapper').attr('style', '');
+        // swiper = new Swiper('.swiper-container', settings);
 
 
       });
@@ -324,22 +376,26 @@
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.iOSMac').show();
-        // swiper.update();
+        swiper.update();
       });
       $('#Android').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.Android').show();
-        // swiper.update();
+        swiper.update();
       });
 
+      $('#plugins_list').change(function() {
+        console.log('div content changed');
+        //Do what you want when div changes
+      });
 
       $("body").on('DOMSubtreeModified', ".swiper-container", function() {
-        //  swiper.update();
+        swiper.update();
       });
-//       swiper.on('slideChange', function () {
-//   console.log('slide changed');
-// });
+      //       swiper.on('slideChange', function () {
+      //   console.log('slide changed');
+      // });
     });
   </script>
 
@@ -422,12 +478,12 @@
             <div class="">
               <div id="halfDesc">
               </div>
-              <div id="fullDesc"style="display:none;">
+              <div id="fullDesc" style="display:none;">
               </div>
 
 
-              Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays full
-              screen video with a customizable skip button<br> 2. Option to run Unity in the background<br> 3. Play videos without upgrading to Unity Pro<br><br> For Unity 4 &amp; 5 | 64bit Support | <a target="_blank" href="https://werplaydev.atlassian.net/wiki/x/XAA0">Documentation</a><br><br>              NOTE: Support for the basic version will not be exclusive. It's for the as it is use. If you want technical support then go for <a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/8098">WRP iOS Video Player Pro</a><br><br>              We’ll do our best to answer all support related questions, however the users of PRO version of this plugin will have priority. Please be patient if we take a little while to respond.
+              Now with iOS Video Player, play any video in your Unity project for iOS. Simple integration and full screen video playback, with no need for Unity Pro. Optionally, add a custom skip button to skip the video. Grab it now!<br><br> 1. Plays
+              full screen video with a customizable skip button<br> 2. Option to run Unity in the background<br> 3. Play videos without upgrading to Unity Pro<br><br> For Unity 4 &amp; 5 | 64bit Support | <a target="_blank" href="https://werplaydev.atlassian.net/wiki/x/XAA0">Documentation</a><br><br>              NOTE: Support for the basic version will not be exclusive. It's for the as it is use. If you want technical support then go for <a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/8098">WRP iOS Video Player Pro</a><br><br>              We’ll do our best to answer all support related questions, however the users of PRO version of this plugin will have priority. Please be patient if we take a little while to respond.
               <br><br> A more powerful solution, the iOS Video Player PRO, is also available. <a target="_blank" href="https://www.assetstore.unity3d.com/#/content/8098">Grab it now-iOS Video Player PRO</a>.<br><br> We bet you like being appreciated when
               you do something nice. So do we- so if you like it, please leave a nice little review.<br><br> For your feedback: <a target="_blank" href="mailto:unitysupport@werplay.com">unitysupport@werplay.com</a><br><br>
               <div onclick="morelesstoggle()" class="uk-padding-small uk-button">

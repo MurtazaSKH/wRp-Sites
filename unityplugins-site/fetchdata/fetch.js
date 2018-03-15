@@ -139,3 +139,10 @@ function morelesstoggle() {
   document.getElementById('fullDesc').style.display="inline";
   document.getElementById('moreless').style.display="none";
 }
+
+
+///////////////////////////////////////////////////// On click events for sorting plugins
+function artasset() {
+  document.getElementById('fullDesc').style.display="inline";
+  document.getElementById('moreless').style.display="none";
+}
