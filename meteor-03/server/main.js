@@ -1,5 +1,5 @@
-import { Meteor } from 'meteor/meteor';
+import './../imports/utils';
+import add from './../imports/math.js';
+console.log('generated log in server/main.js');
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+console.log(add(10,2));

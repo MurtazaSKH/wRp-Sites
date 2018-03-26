@@ -1,22 +1,24 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Meteor} from 'meteor/meteor';
 
-import './main.html';
+const players = [{_id:1,name:'Stevie',score:85},{_id:2,name:'Salah',score:91}];
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+const renderPlayers= function (playerslist) {
+  return playerslist.map(function(a){
+    return <p key={a._id}>{a.name} has {a.score} point(s).</p>;
+  });
+}
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+Meteor.startup(function() {
+  let title= "Score Settings";
+  let jsx = (
+    <div>
+      {/*Commenting inside jsx*/}
+      <h1>{title}</h1>
+    <p>This is text from main.js client</p>
+    {renderPlayers(players)}
+  </div>);
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+  ReactDOM.render(jsx, document.getElementById('app'));
 });
