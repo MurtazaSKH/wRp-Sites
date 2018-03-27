@@ -1,5 +1,14 @@
-import './../imports/utils';
-import add from './../imports/math.js';
-console.log('generated log in server/main.js');
+import {Meteor} from 'meteor/meteor';
+import {Players} from './../imports/api/players';
 
-console.log(add(10,2));
+Meteor.startup(() =>{
+//   Players.insert(
+// {
+//   name: 'Milner',
+//   number:7
+// });
+  // console.log(Players.find().fetch());
+  let numbers = [9,99,4,56];
+  let newNumbers= numbers.map((number) => number+1);
+  console.log(newNumbers);
+});
