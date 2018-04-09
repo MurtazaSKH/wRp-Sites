@@ -14,7 +14,7 @@
   <!-- <script src="js/isotope.pkgd.min.js" defer></script> -->
   <script src="./fetchdata/fetch.js"></script>
   <script>
-    // getSlides();
+    getSlides();
   </script>
 </head>
 
@@ -117,7 +117,7 @@
           <li id="GameKit"><a href="">Game Kits</a></li>
           <li id="iOSMac"><a href="">iOS/MAC Plugins</a></li>
           <li id="Android"><a href="">Android Plugins</a></li>
-          <li id="refreshSwiper"><a href="">refreshSwiper</a></li>
+          <!-- <li id="refreshSwiper"><a href="">refreshSwiper</a></li> -->
         </ul>
       </nav>
     </div>
@@ -304,25 +304,12 @@
 
 
       // Initializing swiper
-      // var swiper = new Swiper('.swiper-container', {
-      //   slidesPerView: 3,
-      //   slidesPerColumn: 2,
-      //   spaceBetween: 30,
-      //   observer: true,
-      //   observeParents: true,
-      //   navigation: {
-      //     nextEl: '.swiper-button-next',
-      //     prevEl: '.swiper-button-prev',
-      //   },
-      //   pagination: {
-      //     el: '.swiper-pagination',
-      //     clickable: true,
-      //   },
-      // });
-      var settings = {
+      var swiper = new Swiper('.swiper-container', {
         slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 30,
+        slidesPerColumn: 1,
+        spaceBetween: 10,
+        observer: true,
+        observeParents: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -331,8 +318,21 @@
           el: '.swiper-pagination',
           clickable: true,
         },
-        },
-        swiper = new Swiper('.swiper-container', settings);
+      });
+      // var settings = {
+      //   slidesPerView: 3,
+      //   slidesPerColumn: 2,
+      //   spaceBetween: 30,
+      //   navigation: {
+      //     nextEl: '.swiper-button-next',
+      //     prevEl: '.swiper-button-prev',
+      //   },
+      //   pagination: {
+      //     el: '.swiper-pagination',
+      //     clickable: true,
+      //   },
+      //   },
+      //   swiper = new Swiper('.swiper-container', settings);
 
         $('#refreshSwiper').on('click', function() {
           swiper.update();
@@ -343,18 +343,20 @@
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.swiper-slide').show();
-        // swiper.update();
+        // swiper.param.slidesPerColumn= 2;
+        swiper.update();
       });
       $('#artasset').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.ArtAssets').show();
-        // swiper.update(true);
+        swiper.update();
 
         // var swiperWrapper = $('.swiper-wrapper'),
-        // newSlides = $('#plugins_list').children('.swiper-slide').clone(true);
+        // newSlides = $('#plugins_list').children('.swiper-slide');
+        // // console.log(newSlides);
         // swiper.destroy(true,true);
-        // swiperWrapper.empty().append(newSlides);
+        // // swiperWrapper.empty().append(newSlides);
         // $('.swiper-wrapper').attr('style', '');
         // swiper = new Swiper('.swiper-container', settings);
 
@@ -364,13 +366,13 @@
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.Editor').show();
-        // swiper.update(true);
+        swiper.update();
       });
       $('#GameKit').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
         $('.swiper-slide').hide();
         $('.GameKit').show();
-        // swiper.update();
+        swiper.update();
       });
       $('#iOSMac').on('click', function() {
         // UIkit.toggle('.swiper-slide').toggle();
