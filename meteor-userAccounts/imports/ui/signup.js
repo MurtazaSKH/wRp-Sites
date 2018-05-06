@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {Accounts} from 'meteor/accounts-base';
 
 export default class SignUp extends React.Component {
   constructor (props) {
@@ -21,9 +22,20 @@ export default class SignUp extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault();
+    //
+    // this.setState({
+    //   error:'Something went wrong!'
+    // })
+    let email=this.refs.email.value.trim();
+    let password=this.refs.password.value.trim();
 
-    this.setState({
-      error:'Something went wrong!'
+    Accounts.createUser({email,password},(err)=>{
+      console.log('Signup Callback',err);
+      if(err){
+        this.setState({error:err.reason});
+      }else {
+        this.setState({error:''});
+      }
     })
   }
   render() {
@@ -34,9 +46,9 @@ export default class SignUp extends React.Component {
         {/* <p>{this.state.count}</p>
         <button onClick={this.increment.bind(this)}>+</button>
         <button onClick={this.decrement.bind(this)}>-</button> */}
-        <form onSubmit={this.onSubmit.bind(this)}>
-          <input type="email" name="Email" placeholder="Email"/>
-          <input type="password" name="pass" placeholder="Password"/>
+        <form onSubmit={this.onSubmit.bind(this)} noValidate>
+          <input type="email" ref="email" name="Email" placeholder="Email"/>
+          <input type="password" ref="password" name="pass" placeholder="Password"/>
           <button>Sign Up</button>
         </form>
     <Link to="/">Go to Login </Link>
