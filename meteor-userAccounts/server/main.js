@@ -1,45 +1,31 @@
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema from 'simpl-schema';
-import {Accounts} from 'meteor/accounts-base';
+import '../imports/api/users';
+import {Links} from '../imports/api/links';
+import '../imports/startup/simple-schema-configuration.js';
+import {WebApp} from 'meteor/webapp';
 
 Meteor.startup(() => {
-  // code to run on server at startup
-  // const petSchema = new SimpleSchema({
-  //   name: {
-  //     type: String,
-  //     min: 1,
-  //     max: 100,
-  //   },
-  //   age : {
-  //     type: Number,
-  //     min: 0
-  //   }
-  // });
+  WebApp.connectHandlers.use((req,res,next)=>{
+    const _id=req.url.slice(1);
+    const link=Links.findOne({_id});
 
-  Accounts.validateNewUser ((user)=>{
-    console.log('A new user',user);
-    return true;
-  })
-
-  const employeeSchema = new SimpleSchema ({
-    name: {
-      type: String,
-      min: 1,
-      max: 200
-    },
-    hourlyWage : {
-      type: Number,
-      min: 0
-    },
-    email: {
-      type: String,
-      regEx: SimpleSchema.RegEx.Email
+    if(link){
+      res.statusCode=302;
+      res.setHeader('Location',link.url);
+      res.end();
+    } else {
+      next();
     }
+
+
   });
 
-  // employeeSchema.validate ({
-  //   name: 'Mike',
-  //   hourlyWage: 35,
-  //   email: 'hashmi+plus@gmail.com'
-  // })
+  // WebApp.connectHandlers.use((req,res,next)=>{
+  //   console.log('this is my custom middleware');
+  //   console.log(req.url,req.method,req.headers,req.query);
+  //   res.statusCode=404;
+  //   res.setHeader('Ny-Custom-Header','Dev At Work');
+  //   res.end();
+  //   next();
+  // });
 });
